@@ -1,0 +1,2 @@
+dvips paper.dvi
+ps2pdf paper.ps
