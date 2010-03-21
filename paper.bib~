@@ -62,7 +62,6 @@ archivePrefix = "arXiv",
 @ARTICLE{2005MNRAS.359..567A,
    author = {{Agol}, E. and {Steffen}, J. and {Sari}, R. and {Clarkson}, W.},
  keywords = {extrasolar planets, transiting planets, planetary dynamics, eclipses, planetary systems},
-   journal= {\mnras},
      year = 2005,
     month = may,
    volume = 359,
@@ -71,36 +70,3 @@ archivePrefix = "arXiv",
    adsurl = {http://adsabs.harvard.edu/abs/2005MNRAS.359..567A},
   adsnote = {Provided by the SAO/NASA Astrophysics Data System}
 }
-
-@ARTICLE{2004ApJ...613L.153A,
-   author = {{Alonso}, R. and {Brown}, T.~M. and {Torres}, G. and {Latham}, D.~W. and {Sozzetti}, A. and {Mandushev}, G. and {Belmonte}, J.~A. and {Charbonneau}, D. and {Deeg}, H.~J. and {Dunham}, E.~W. and {O'Donovan}, F.~T. and {Stefanik}, R.~P.},
-    title = "{TrES-1: The Transiting Planet of a Bright K0 V Star}",
-  journal = {\apjl},
-   eprint = {arXiv:astro-ph/0408421},
- keywords = {Stars: Binaries: Eclipsing, Stars: Planetary Systems, Stars: Individual: Alphanumeric: GSC 02652-01324, Techniques: Photometric, Techniques: Radial Velocities},
-     year = 2004,
-    month = oct,
-   volume = 613,
-    pages = {L153-L156},
-      doi = {10.1086/425256},
-   adsurl = {http://adsabs.harvard.edu/abs/2004ApJ...613L.153A},
-  adsnote = {Provided by the SAO/NASA Astrophysics Data System}
-}
-
-@ARTICLE{2010A&A...510A.107M,
-   author = {{Mislis}, D. and {Schr{\"o}ter}, S. and {Schmitt}, J.~H.~M.~M. and 
-	{Cordes}, O. and {Reif}, K.},
-    title = "{Multi-band transit observations of the TrES-2b exoplanet}",
-  journal = {\aap},
-archivePrefix = "arXiv",
-   eprint = {0912.4428},
- keywords = {planetary systems, techniques: photometric, stars: individual: TrES-2b},
-     year = 2010,
-    month = feb,
-   volume = 510,
-    pages = {A107+},
-      doi = {10.1051/0004-6361/200912910},
-   adsurl = {http://adsabs.harvard.edu/abs/2010A%26A...510A.107M},
-  adsnote = {Provided by the SAO/NASA Astrophysics Data System}
-}
-
