@@ -103,72 +103,79 @@
 %%  Otherwise, LaTeX will issue an error. 
 
 \section{Introduction}
-Of the exoplanets so far discovered, more than \numt\ are known to transit their
-host star. These planets, with their favorable orbital alignment,
-allow for calculation of planetary radii, stellar radii and average
-density. Very accurate timing of the transit may reveal even more
-information about the planet. So called transit timing variation (TTV)
-measurements \citep{2005MNRAS.359..567A} (and cite more?) can reveal deviations from
-Keplerian elliptical motion due to the tug of another planet or even a
-satellite.
+Of the exoplanets so far discovered, more than \numt\ are known to
+transit their host star. These planets, with their favorable orbital
+alignment, reveal planetary radii, stellar radii and average
+density. Even more information about their orbit can be gleaned from
+the exact epoch at which they transit their host star. So called
+transit timing variation (TTV) measurements
+\citep{2005MNRAS.359..567A} (and cite more?) are designed to reveal
+deviations from Keplerian elliptical motion due to the tug other
+planets and satellites.
 
 Previous transit timing has been done with optical and infrared
 telescopes \citep{2004ApJ...613L.153A,2010A&A...510A.107M} (\&
-add some more TTV papers?) The light curve of these transits is smooth
+add some more TTV papers?) The light curves of these transits are smooth
 and therefore the exact time at which egress begins or ingress ends is
 difficult to pin down precisely. Part of the reason for the curve's
 smoothness is limb darkening of the star: due to the temperature
-stucture of the star, which decreases in temperature with radius,
+structure of the star, which decreases in temperature with radius,
 shallower radial components in the line of sight will appear
-darker. At the limb, where the shallowest radial component is seen,
-the photosphere is (??? K), whereas a straight line of sight goes to a
-deeper radial component and is (??? K).
+darker.
+
+% At the limb, where the shallowest radial component is seen,
+%the photosphere is (??? K), whereas a straight line of sight goes to a
+%deeper radial component and is (??? K).
 
 In this paper, we outline a method of observing that has the opposite
-effect: stars are limb brightnened for some wavelengths. In
-particular, any optically thin chromospheric emission line will be
+effect: stars are limb brightened for some wavelengths. In
+particular, any optically thin chromospheric or coronal emission line will be
 brighter at the limb than in the center. Just as with a planetary
-nebula, like the Ring Nebula, the limb of a shell of gas is brighter
-at the edges. This is because the column density at the limb is much
-larger at the limb than in the center. This is different from the
-effect of limb darkening, which has to do with the temperature
-structure of the star. 
+nebula, like the Ring Nebula, the limb of an optically thin shell of
+gas is brighter at the edges. This is because the column density at
+the limb is much larger at the limb than in the center. This effect is
+different from limb darkening, which requires an optically thick
+medium and decreasing temperatures with radius.
 
-\citet{2009ApJ...701.1616A} point out that limb brightening could be
+\citet{assef} point out that limb brightening could be
 very useful for detection of transits of giant planets. One advantage
-to photometry in limb brightened wavelenghts is that transits are
+to photometry in limb brightened wavelengths is that transits are
 deeper overall than for both limb brightened and uniform disk
 emission. This is because the planet cover a larger amount of the
-emission. \citet{2009Apj...701.1616A} approximate the limb brightened
-star as a uniform ring of emission and therefore the amount of light
-the planet blocks is simply the fraction of the ring covered instead
-of the fraction of areas. With their approximation, the maximum depth
-of the transit=$(R_p/R_*)$ instead of the $(R_p/R_*)^2$
+emission. \citet{assef} approximate the limb brightened
+star as a uniform ring of emission. With their approximation, the maximum depth
+of the transit=$(2\pi R_p/ (2\pi R_*))$ instead of the $(R_p/R_*)^2$
 as expected for a uniform disk.
 
-A better approximation for the transit depth is to compare the area of
-the projected planet shadow on the star to the total area of the
-curved stellar surface. If the scale-height of the chromosphere, $h$,
-is much smaller than the size of the planet and star, $R_p, R_*$, then
-we can treat the chromosphere as a geometrically thin hemisphere of
-emission.  This limit has the problem that at the edge of the shell,
-the surface brightness will be infinite; this is an example classic
-fold-caustic.  However, when one integrates the surface brightness
-over area, the total flux is finite, and thus this still proves to be
-a useful approximation.
+A better approximation for the transit depth is the area of the
+projected planet shadow $A_t$, divided by the total area of the
+hemisphere, $2\pi R_*^2$. This is in the limit of a geometrically thin
+hemisphere of emission, ie. the scale-height of the chromosphere, $h$,
+is much smaller than the size of the planet and star, $R_p, R_*$.
 
-However, rather than integrating over surface brightness to compute
-the transit depth, the depth of transit is simply the area of the 
-hemisphere that is blocked by the planet, $A_t$, divided by the total
-area of the hemisphere, $2\pi R_*^2$.
+%to the total area of the
+%curved stellar surface. If the scale-height of the chromosphere, $h$,
+%is much smaller than the size of the planet and star, $R_p, R_*$, then
+%we can treat the chromosphere as a geometrically thin hemisphere of
+%emission.  
+%This limit has the problem that at the edge of the shell,
+%the surface brightness will be infinite; this is an example classic
+%fold-caustic.  However, when one integrates the surface brightness
+%over area, the total flux is finite, and thus this still proves to be
+%a useful approximation.
 
-We can estimate the maximum depth of transit as follows from
+%However, rather than integrating over surface brightness to compute
+%the transit depth, 
+%the depth of transit is simply the area of the 
+%hemisphere that is blocked by the planet, 
+
+We can estimate this maximum depth of transit as follows from
 Figure \ref{fig01}.  When the planet touches the edge of the star 
 (second contact), as shown from an edge-on viewpoint in this figure,
 then the length of the arc of the long axis of the shadow is
 $R_*\theta$.  Now, the diameter of the planet is given by 
 $2 R_p \approx R_*(1-\cos{\theta}) \approx \frac{1}{2} R_* \theta^2$,
-where the latter approxmiation is valid for $\theta \ll 1$.
+where the latter approximation is valid for $\theta \ll 1$.
 Solving for $\theta$, we find $\theta = 2\sqrt{R_p/R_*}$, so to
 be valid we require $R_p/R_* \ll 1/4$.  Now, we can approximate
 the shadow as an ellipse which will have a minor axis of $R_p$
@@ -178,8 +185,7 @@ the maximum depth of transit is given by
 \begin{equation} \label{depth_anal}
 {A_t \over \pi R_*^2} = \frac{1}{2} \left({R_p \over R_*}\right)^{3/2}.
 \end{equation}
-Note that this is a different scaling than that given in Assef et 
-al.\ (2009) who did not consider the fold-caustic nature of a chromospheric
+Note that this is a different scaling than that given in \citet{assef} who did not consider the fold-caustic nature of a chromospheric
 transits.
 
 This has the remarkable consequence that the depth of a chromospheric
@@ -188,7 +194,7 @@ a transit of a uniform disk.  A chromospheric transit has a maximum
 depth that is $\frac{1}{2} \left({R_* \over R_p}\right)^{1/2}$
 times deeper than the maximum transit depth of a uniform disk;
 thus smaller planets have an advantage to be observed at
-chromospheric wavelengths, as emphasized by Assef et al.\ (2009).
+chromospheric wavelengths, as emphasized by \citet{assef}.
 
 \begin{figure}
 %\centerline{\psfig{figure=Chromospheric_shadow.eps,width=4in}}
@@ -200,31 +206,22 @@ at the edge of the star.}
 \label{fig01}
 \end{figure}
 
+In $\mathsection$\ref{labl:chromlcurve} we calculate the expected limb
+brightened light curve for an optically thin emission line and compare
+this to UV images of the Sun. In $\mathsection$\ref{labl:stactv}, we
+discuss the effects of stellar activity on these observations. We
+compare the expected transit timing precision for UV photometry with
+optical photometry in $\mathsection$\ref{labl:sn} and list targets
+suitable for UV photometry in $\mathsection$\ref{labl:targ}. We
+also outline several possibilities for chromospheric science in
+$\mathsection$\ref{labl:cscience}.
 
- could be useful for
-giant planets, but the scaling is different from their approximation
-of (R$_p$/R$_*$).
-
--Transit Timing Variations \\
--\\
-    Find the presence of other planets/moons and inclinations \citep{2005MNRAS.359..567A}. For example, using the Fast Inversion Method \citep{2010ApJ...709L..44N}\\
--\\
--\\    
--Limb Brightening \\
--\\
-    How we can take advantage of optically thin chromospheric lines \\
--\\
--\\
-    - We present a more detailed calculation in $\mathsection$\ref{labl:chromlcurve}
--\\
--\\
--\\
 
 \section{Limb Brightening}
 \label{labl:limbbright}
 \subsection{Limb Brightened Lines}
 -\\
-Optically thin lines are the most limb-brightnened
+Optically thin lines are the most limb-brightened
 -\\
 -\\
 For M Stars in the Near UV, we'd be looking at 
@@ -236,8 +233,7 @@ $\sim$2800 \AA\ \citep{2007PASP..119...67H}
 -\\
 -\\
 
-\subsection{Chromospheric Light-Curve: Thin-Shell Approximation}
-\label{labl:chromlcurve}
+\subsection{Chromospheric Light-Curve: Thin-Shell Approximation} \label{labl:chromlcurve}
 
 -\\
 For optically thin chromospheric lines:
@@ -247,7 +243,7 @@ For optically thin chromospheric lines:
 \begin{equation}
 \delta_{\mathrm{UD}} = \left( \frac{R_p}{R_*} \right)^2
 \end{equation}
-where $\delta_{\mathrm{LB}}$ is the limb brightnened transit depth and
+where $\delta_{\mathrm{LB}}$ is the limb brightened transit depth and
 $\delta_{\mathrm{UD}}$ is the uniform disk transit depth \\
  -\\
  - Eric's figure: projection of planet shadow onto curved surface
@@ -256,14 +252,14 @@ $\delta_{\mathrm{UD}}$ is the uniform disk transit depth \\
 \subsection{Dependence on Planet Size}
 -Chromospheric transit depths are deeper for the same size planet \\
 -Chromospheric transit  depths for small planets are closer to the depths for large planets
- - Eric's figure: limb-brightnened vs. uniform-disk egresses for two different size planets \\
+ - Eric's figure: limb-brightened vs. uniform-disk egresses for two different size planets \\
 -Chromospheric transits allow you to look for transits of giant stars \\
 
 
 \subsection{Isothermal Chromospheric Models}
 - \\
 - We use the coronal approximation (optical thinness of chromosphere)
-- Eric's figure of a limb-brightned star \\
+- Eric's figure of a limb-brightened star \\
  - we assume an opaque photosphere which creates a discontinuity \\
 - A more accurate prediction can made with an exponential emissivity \\
 --- When the scale height is larger than the planet, it's a smoother, longer-lived transit \\
@@ -272,29 +268,29 @@ $\delta_{\mathrm{UD}}$ is the uniform disk transit depth \\
 
 \subsection{Comparison to SOHO data}
 -\\
-- Compare our models to lightcurves from SOHO FeIX images
- (or lightcurves from STEREO observing the moon crossing the sun) \\
-- explain discrepencies\\
-- discuss differences between M-dwarf or giant chromoshperic transit
+- Compare our models to light curves from SOHO FeIX images
+ (or light curves from STEREO observing the moon crossing the sun) \\
+- explain discrepancies\\
+- discuss differences between M-dwarf or giant chromospheric transit
 vs. a sun-like chromospheric transit \\
 
-\section{The Effects of Stellar Activity}
+\section{The Effects of Stellar Activity}\label{labl:stactv}
 -\\
 -    Starspots - are they a problem? \\
 -\\
 -    Compare Transit lifetime to flare lifetimes
 -  Select and list more quiescent stars that would be good candidates
 
-\section{Signal to Noise Calculations}
+\section{Signal to Noise Calculations} \label{labl:sn}
 - What does the NUV flux and (R$_p$/R$_*$) have to be to make this feasible?
 
-\section{Targets for UV Observations}
+\section{Targets for UV Observations} \label{labl:targ}
 - I think this is going to be M-dwarfs and giants \\
 - stars where our method beats conventional photometry
 -      Report GALEX fluxes \\
 -   Possible telescopes - Swift, Hubble or GALEX \\
 
-\subsection{Chromospheric Science}
+\subsection{Chromospheric Science} \label{labl:cscience}
 - \\
 - In addition to UV transit timing, we could also study chromospheres
 - \\
