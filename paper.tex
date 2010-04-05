@@ -42,8 +42,8 @@
 %% one line. However, you may use \\ to force a line break if
 %% you desire.
 
-\title{Transit Timing in the UV:\\
-     Taking Advantage of Limb brightening}
+\title{Double-U Light Curves:\\
+Planetary Transits at Limb Brightened Wavelengths}
 
 %% Use \author, \affil, and the \and command to format
 %% author and affiliation information.
@@ -115,27 +115,20 @@ planets and satellites.
 
 Previous transit timing has been done with optical and infrared
 telescopes \citep{2004ApJ...613L.153A,2010A&A...510A.107M} (\&
-add some more TTV papers?) The light curves of these transits are smooth
-and therefore the exact time at which egress begins or ingress ends is
-difficult to pin down precisely. Part of the reason for the curve's
-smoothness is limb darkening of the star: due to the temperature
-structure of the star, which decreases in temperature with radius,
-shallower radial components in the line of sight will appear
-darker.
+add some more TTV papers?) Light curves for these kind of transits
+have large slopes at ingress and egress and more gradual slopes during
+the middle of the transit due to stellar limb darkening. 
 
-% At the limb, where the shallowest radial component is seen,
-%the photosphere is (??? K), whereas a straight line of sight goes to a
-%deeper radial component and is (??? K).
-
-In this paper, we outline a method of observing that has the opposite
+We outline a method of observing that has the opposite
 effect: stars are limb brightened for some wavelengths. In
 particular, any optically thin chromospheric or coronal emission line will be
 brighter at the limb than in the center. Just as with a planetary
 nebula, like the Ring Nebula, the limb of an optically thin shell of
 gas is brighter at the edges. This is because the column density at
-the limb is much larger at the limb than in the center. This effect is
-different from limb darkening, which requires an optically thick
-medium and decreasing temperatures with radius.
+the limb is much larger at the limb than in the center. \footnote{Note that this
+effect is different from what causes limb darkening.} As a
+consequence, a transit curve will be ``W''-shaped, where the maximum
+transit depth occurs at the stellar limbs. 
 
 \citet{assef} point out that limb brightening could be
 very useful for detection of transits of giant planets. One advantage
@@ -144,25 +137,233 @@ deeper overall than for both limb brightened and uniform disk
 emission. This is because the planet cover a larger amount of the
 emission. \citet{assef} approximate the limb brightened
 star as a uniform ring of emission. With their approximation, the maximum depth
-of the transit=$(2\pi R_p/ (2\pi R_*))$ instead of the $(R_p/R_*)^2$
+of the transit scales as $R_p/R_*$ instead of $(R_p/R_*)^2$,
 as expected for a uniform disk.
 
-A better approximation for the transit depth is the area of the
-projected planet shadow $A_t$, divided by the total area of the
-hemisphere, $2\pi R_*^2$. This is in the limit of a geometrically thin
-hemisphere of emission, ie. the scale-height of the chromosphere, $h$,
-is much smaller than the size of the planet and star, $R_p, R_*$.
+We show in this paper that a more accurate limb brightened
+approximation for the transit depth scales as $(R_p/R_*)^{3/2}$. In
+$\mathsection$\ref{labl:chromlcurve} we calculate the expected limb
+brightened light curve for an optically thin emission line and compare
+this to UV images of the Sun. In $\mathsection$\ref{labl:stactv}, we
+discuss the effects of stellar activity on these observations. We
+compare the expected transit timing precision for UV photometry with
+optical photometry in $\mathsection$\ref{labl:sn} and list targets
+suitable for UV photometry in $\mathsection$\ref{labl:targ}. We also
+outline several possibilities for chromospheric science in
+$\mathsection$\ref{labl:cscience}.
 
-%to the total area of the
-%curved stellar surface. If the scale-height of the chromosphere, $h$,
-%is much smaller than the size of the planet and star, $R_p, R_*$, then
-%we can treat the chromosphere as a geometrically thin hemisphere of
-%emission.  
-%This limit has the problem that at the edge of the shell,
-%the surface brightness will be infinite; this is an example classic
-%fold-caustic.  However, when one integrates the surface brightness
-%over area, the total flux is finite, and thus this still proves to be
-%a useful approximation.
+\section{Limb Brightened Curves}
+
+\subsection{Chromospheric light curve: thin-shell approximation}
+\label{labl:thinshell}
+
+If the scale-height of the chromosphere, $h$, is much smaller than
+the size of the planet and star, $R_p, R_*$, then we can
+treat the chromosphere as a geometrically thin hemisphere of emission.
+This limit has the problem that at the edge of the shell, the surface
+brightness will be infinite; this is an example classic fold-caustic.
+However, when one integrates the surface brightness over area, the
+total flux is finite, and thus this still proves to be a useful
+approximation.
+
+However, rather than integrating over surface brightness to compute
+the transit depth, the depth of transit is simply the area of the 
+hemisphere that is blocked by the planet, $A_t$, divided by the total
+area of the hemisphere, $2\pi R_*^2$.
+
+We can estimate the maximum depth of transit as follows from
+Figure \ref{fig01}.  When the planet touches the edge of the star 
+(second contact), as shown from an edge-on viewpoint in this figure,
+then the length of the arc of the long axis of the shadow is
+$R_*\theta$.  Now, the diameter of the planet is given by 
+$2 R_p \approx R_*(1-\cos{\theta}) \approx \frac{1}{2} R_* \theta^2$,
+where the latter approxmiation is valid for $\theta \ll 1$.
+Solving for $\theta$, we find $\theta = 2\sqrt{R_p/R_*}$, so to
+be valid we require $R_p/R_* \ll 1/4$.  Now, we can approximate
+the shadow as an ellipse which will have a minor axis of $R_p$
+and a major axis of $R_*\theta$, so we can approximate the
+area of the shadow as $A_t = \pi \sqrt{R_pR_*} R_p$.  Thus,
+the maximum depth of transit is given by 
+\begin{equation} \label{depth_anal}
+{A_t \over \pi R_*^2} = \frac{1}{2} \left({R_p \over R_*}\right)^{3/2}.
+\end{equation}
+Note that this is a different scaling than that given in Assef et 
+al.\ (2009) who did not consider the fold-caustic nature of a chromospheric
+transits.
+
+This has the remarkable consequence that the depth of a chromospheric
+transit does not decline as much with the radius of the planet as 
+a transit of a uniform disk.  A chromospheric transit has a maximum
+depth that is $\frac{1}{2} \left({R_* \over R_p}\right)^{1/2}$
+times deeper than the maximum transit depth of a uniform disk;
+thus smaller planets have an advantage to be observed at
+chromospheric wavelengths, as emphasized by Assef et al.\ (2009).
+
+\begin{figure}
+%\centerline{\psfig{figure=Chromospheric_shadow.eps,width=4in}}
+%\includegraphics[trim = 1in 6in 2in 0.5in,clip,width=3
+%in]{Chromospheric_shadow.eps}
+\includegraphics[!ht]{Chromospheric_shadow.eps}
+\caption{Edge-on view of area of shadow cast by the planet
+at the edge of the star.}
+\label{fig01}
+\end{figure}
+
+In the limit of small $p=R_p/R_*$, we can approximate the light curve
+fairly accurately in terms of elliptic integrals.
+Let $b$ be the impact parameter of center of the planet relative to
+the center of the star in units of the radius of the star, as
+seen by an observer.  Let $a = A_t/R_*^2$ be the dimensionless transit 
+area, and $f(b,p)=1-\frac{a}{2\pi}$ is the transit light curve.
+Then, for $b > 1+p$, there is no transit, so $a=0$.
+For $1+p > b > 1-p$, the planet straddles the edge of the star.
+Define $u_1=\frac{1-b}{p}$.
+Then the depth of transit may be approximated by:
+\begin{eqnarray}\label{ingress}
+a&=&\frac{4p^{3/2}}{3}\sqrt{2(1+b-p)\over b(3+b-p)}\left(2u_1 E(k)+(1-u_1)K(k)\right), \cr
+k &=&\sqrt{(1+u_1)/2},
+\end{eqnarray}
+where $K(k)$ and $E(k)$ are complete Legendre elliptic integrals of the first and
+second kind.
+For $0 < b < 1-p$, then planet is fully contained within the disk of the star,
+and the transit depth can be approximated as:
+\begin{eqnarray}\label{disk}
+a&=&{8p\over 3}\sqrt{1-b+p\over 1+b}\left(u_1E(k)-(u_1-1)K(k)\right),\cr
+k&=&\sqrt{2\over 1+u_1}.
+\end{eqnarray}
+
+\subsection{Dependence on planet size}
+
+Figure \ref{fig02} plots the transit light curves for planet of
+two different sizes, $p=0.02$ and $p=0.04$ versus the planet-star
+separation, $b$.  The analytic estimate does a remarkably good
+job in predicting the maximum depth of a chromospheric transit,
+which means that the chromospheric depth is 3.5 and 2.5 times
+deeper for the two planets, respectively.  Although the smaller
+planet has a transit depth that is 25\% of the larger planet's
+transit depth for a star without limb-darkening, the maximum 
+chromospheric transit depth for the smaller planet is 35\% that 
+of the larger planet, and is nearly as deep as the transit of 
+the larger planet.  Note that the duration of ingress/egress 
+scales with the size of the planet in both cases.  
+
+There are several consquences of the deeper transit depth:
+(1) transit-timing precision is higher for a chromospheric
+transit than for a non-limb darkened transit by a factor of
+$\sim p^{-1/2}$ assuming the same signal-to-noise for
+both light curves; (2) the larger depth and short duration
+of the chromospheric transit can make detection of giant
+planets transiting sub-giant stars greater possibility;
+and (3) since the advantage of chromospheric transits
+over continuum transits grows as $\frac{1}{2}p^{-1/2}$,
+the chromospheric transits have a greater advantage for
+transit detection of small planets. For instance
+for $p=0.01$, the chromospheric transit is $5\times$
+deeper, which is appropriate for Earth-Sun transits
+or giant planets transiting a $10R_\odot$ star.
+
+Although the considerations in this section apply
+for the geometrically-thin shell approximation,
+we now show that this also applies when one considers
+the physical extent of the chromosphere.
+
+\begin{figure}
+%\centerline{\psfig{figure=comp_size.eps,width=4in}}
+\includegraphics[trim = 1in 6in 2in 0.5in,clip,width=3 in]{comp_size.eps}
+\caption{Transit light curve depth near ingress/egress 
+for $p=0.04$ (solid lines) and $p=0.02$ (dashed lines).
+The thick lines show a chromospheric transit, while the 
+thin lines show a transit of a source of uniform brightness.
+The vertical dotted line marks the edge of the star.
+The large dots show the prediction of the analytic
+estimate of the maximum chromospheric transit depth\ref{depth_anal}.}
+\label{fig02}
+\end{figure}
+
+\subsection{Isothermal chromosphere models}
+
+In the chromosphere the coronal approximation applies,
+which means that every collisional excitation results
+in cooling by optically-thin radiative emission.
+If we take the chromosphere to be isothermal, then
+the emissivity scales as the square of the density,
+$\epsilon \propto \rho^2$.  For an isothermal chromosphere
+in which $h \ll R_*$, the density should be exponential,
+so $\epsilon \propto e^{-2 (r-R_*)/h}$ where $R_*$
+now represents the base of the chromosphere where it
+becomes optically-thick.
+
+We computed the emission of this emissivity, which is plotted in
+Figure \ref{fig03}.  Note the rather similar appearance to images of
+the Sun's corona.  There is a discontinuity in surface brightness at
+$b=1$ due to the opaque inner boundary of our model; at this point the
+emissivity from beyond the midplane of the star is blocked, while for
+slightly larger impact parameters we see the emissivity on the far
+side of the star.  This feature is only present if there is a sharp
+discontinuity in the opacity of the chromosphere.
+
+\begin{figure}
+%%\centerline{\psfig{figure=chromosphere_disk.eps,width=3in} \psfig{figure=chromosphere_surface_brightness.eps,width=3in}}
+\includegraphics[trim = 1in 6in 2in 0.5in,clip,width=3 in]{chromosphere_surface_brightness.eps}
+\caption{Isothermal chromospheric model. Left hand panel shows a simulated 2D
+image for $h=0.1R_*$, while the right hand panel shows the
+surface brightness plotted in the radial direction near
+the limb for $h=0.1R_*$ (solid line) and $h=0.01R_*$
+(dashed line).  The surface brightness for the geometrically-thin
+approximation is not plotted as it is nearly indistinguishable from 
+the $h=0.01R_*$ surface brightness on this scale.}
+\label{fig03}
+\end{figure}
+
+We have computed transit lightcurves using this brightness
+profile, and an example of the results is shown in Figure
+\ref{fig04}.  As the scale height shrinks, the light
+curve approaches that of the geometrically-thin model.
+For $h > p$, the transit starts further from the disk of
+the star due to the more extended surface brightness profile
+of the star.  Since the chromosphere is more diffuse for
+larger values of $h$, the transit depth is smaller and
+broader.  For $h < p$ and $h \rightarrow 0$, the light curve 
+starts  to approach that of the geometrically-thin limit.
+The transit depth is slightly deeper for $h<p$ since the
+emissivity is somewhat brighter near the limb due to
+the fact that we can see the emission from the far side
+of the star which is invisible when $h=0$.  The maximum
+depth depends on both $p$ and $h$; for instance, for 
+$p=0.1$, the maximum depth is 7\% deeper than for
+the thin-shell depth at $h \approx 0.2 p$, while
+for $p=0.02$, the maximum depth occurs at $h=0.01$
+and is 18\% deeper than for the thin-shell depth.
+There is a cusp in the curves at $b=1-p$ (i.e.\ second or third 
+contact) due to the discontinuity in surface brightness at 
+$b=1$.
+
+\begin{figure}
+%\centerline{\psfig{figure=lc_h.1_p.1.eps,width=3in}
+\includegraphics[trim = 1in 6in 2in 0.5in,clip,width=3 in]{lc_h.1_p.1.eps}
+%\psfig{figure=plot_3d_p.02.eps,width=3in}}
+\caption{Chromospheric transit light curves for the
+isothermal chromospheric model with $p=0.1$ (left) and
+$p=0.02$ (right).   In the left panel, the
+solid line is for $h=0.2$; the dotted line for $h=0.02$;
+and the dashed line for $h=0$ (i.e.\ the geometrically-thin
+chromosphereic model, equations \ref{ingress},\ref{disk}).
+In the right panel, the curves are labelled by $h$:
+$h=0.1$ (black), $h=0.03$ (green), $h=0.01$ (blue),
+$h=0.003$ (red), and $h=0$ (black dashed).}
+\label{fig04}
+\end{figure}
+
+\subsubsection{The Thin Shell Approximation}
+
+If the scale-height of the chromosphere, $h$, is much smaller than the
+size of the planet and star, $R_p, R_*$, then we can treat the
+chromosphere as a geometrically thin hemisphere of emission.  This
+limit has the problem that at the edge of the shell, the surface
+brightness will be infinite; this is an example classic fold-caustic.
+However, when one integrates the surface brightness over area, the
+total flux is finite, and thus this still proves to be a useful
+approximation.
 
 %However, rather than integrating over surface brightness to compute
 %the transit depth, 
@@ -196,29 +397,18 @@ times deeper than the maximum transit depth of a uniform disk;
 thus smaller planets have an advantage to be observed at
 chromospheric wavelengths, as emphasized by \citet{assef}.
 
-\begin{figure}
-%\centerline{\psfig{figure=Chromospheric_shadow.eps,width=4in}}
-%\epsscale{3}
-\includegraphics[trim = 1in 6in 2in 0.5in,clip,width=3 in]{Chromospheric_shadow.eps}
-%\plotone{Chromospheric_shadow.eps}
-\caption{Edge-on view of area of shadow cast by the planet
-at the edge of the star.}
-\label{fig01}
-\end{figure}
-
-In $\mathsection$\ref{labl:chromlcurve} we calculate the expected limb
-brightened light curve for an optically thin emission line and compare
-this to UV images of the Sun. In $\mathsection$\ref{labl:stactv}, we
-discuss the effects of stellar activity on these observations. We
-compare the expected transit timing precision for UV photometry with
-optical photometry in $\mathsection$\ref{labl:sn} and list targets
-suitable for UV photometry in $\mathsection$\ref{labl:targ}. We
-also outline several possibilities for chromospheric science in
-$\mathsection$\ref{labl:cscience}.
+% \begin{figure}
+% %\centerline{\psfig{figure=Chromospheric_shadow.eps,width=4in}}
+% %\epsscale{3}
+% \includegraphics[trim = 1in 6in 2in 0.5in,clip,width=3 in]{Chromospheric_shadow.eps}
+% %\plotone{Chromospheric_shadow.eps}
+% \caption{Edge-on view of area of shadow cast by the planet
+% at the edge of the star.}
+% \label{fig01}
+% \end{figure}
 
 
-\section{Limb Brightening}
-\label{labl:limbbright}
+
 \subsection{Limb Brightened Lines}
 -\\
 Optically thin lines are the most limb-brightened
@@ -297,6 +487,7 @@ vs. a sun-like chromospheric transit \\
 - We can map out spots and even see how they might migrate as done by \citet{2010arXiv1002.4113H}
 
 \section{Conclusion}
+
 \bibliography{paper}
 %%  \begin{figure}
 %%  \epsscale{.80}
