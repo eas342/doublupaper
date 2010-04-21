@@ -18,7 +18,10 @@
 
 \newcommand{\vdag}{(v)^\dagger}
 \newcommand{\numt}{60}
-
+\newcommand{\cii}{\ensuremath{\mathrm{C}\,\scriptstyle \mathrm{II}}}
+\newcommand{\oi}{\ensuremath{\mathrm{O}\,\scriptstyle \mathrm{I}}}
+\newcommand{\hi}{\ensuremath{\mathrm{H}\,\scriptstyle \mathrm{I}}}
+\newcommand{\siIV}{\ensuremath{\mathrm{Si}\,\scriptstyle \mathrm{IV}}}
 
 %% You can insert a short comment on the title page using the command below.
 
@@ -398,7 +401,32 @@ $\sim$2800 \AA\ \citep{2007PASP..119...67H}
 -      Report GALEX fluxes \\
 -   Possible telescopes - Swift, Hubble or GALEX \\
 
-\subsection{Previous Work With HD 209458b}
+\subsection{Previous Observations of HD 209458b}
+
+\citet{viddisc} observed HD 209458b with the STIS instrument and found
+an extended Hydrogen and Carbon atmosphere by fitting the light curves
+to the near-UV \hi\, \oi\ and \cii\ lines during a transit. We fit our optically thin model to
+the \siIV\ 1394 \AA\ line transit curve, taken by \citet{vidmad} and
+found a normalized $\chi^2$ to be 36\%\ less that fitting the data to
+a horizontal line (representing no detection). This best-fit model has
+R$_p$/R$_*$ = 0.4, close to the 0.32 found by \citet{vidmad}. A
+re-analysis of this data for more optically thin lines could improve
+the confidence levels of the fit.
+
+\begin{figure}[!ht]
+\includegraphics[width=\textwidth]{hd209458.eps}
+\caption{Our model fits to the HD 209458b SiIV 1394 \AA\ emission line light curve taken by
+  \citet{vidmad}. The 3 parameter fit has the impact parameter, planet
+  size and overal height as free parameters. The Levenberg-Marquardt
+  model fitting method gives R$_p$/R$_*$ = 0.4 and is given by the
+  solid curve. The 
+  dash-triple dotted curve is a model where R$_p$/R$_*$ is fixed 1.1,
+  as given by optical measurements. For comparison, a line has a normalized
+  $\chi^2$ of 1.2 (dashed curve). Also plotted is a model with the
+  R$_p$/R$_*$ = 0.3 as found by \citet{vidmad} for the \hi\ and
+  \cii\ lines.}
+\label{fig03}
+\end{figure}
 
 \section{Signal to Noise Calculations} \label{labl:sn}
 - What does the NUV flux and (R$_p$/R$_*$) have to be to make this feasible?
