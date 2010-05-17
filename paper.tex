@@ -1,6 +1,6 @@
 %% manuscript produces a one-column, double-spaced document:
 \documentclass[manuscript]{aastex}
-%\documentclass[manuscript]{emulateapj}
+
 %\documentclass[twocolumn]{article}
 %\documentclass[twocolumn]{emulateapj}
 
@@ -377,18 +377,21 @@ $h=0.003$ (red), and $h=0$ (black dashed).}
 \begin{figure}
 \begin{center}
 \includegraphics[width=0.5\textwidth]{limb_comparison_w_simplistic.eps}
-\caption{Solar and Model Limb Brightening. (a) \siIV\ emission from the Solar limb as observed by SUMER (Solar Ultraviolet Measurement of Emitted Radiation) \citep{wiik} is strongly limb-brightened. (b) The approximate model made by \citet{assef} that no emission comes from the star interior to the stellar limb. (c) Our model with a scale height of ??, under the coronal and isothermal approximations. Note that the emission extends out past the peak limb brightness (d) Our model with a thin shell approximation, which we employ for \siIV\ emission, and whose light curve is given by  equation \ref{disk}.}
+\caption{Solar and Model Limb Brightening. (a) \siIV\ emission from the Solar limb as observed by SUMER (Solar Ultraviolet Measurement of Emitted Radiation) \citep{wiik} is strongly limb-brightened. (b) The approximate model made by \citet{assef}, where all the emission is from the stellar limb (c) Our model with a scale height of ??, under the coronal and isothermal approximations. Note that the emission extends out past the peak limb brightness (d) Our model with a thin shell approximation, which we employ for \siIV\ emission, and whose light curve is given by  equation \ref{disk}.}
 \label{limbs}
 \end{center}
 \end{figure}
 
-\subsection{\siIV\ Absorption by HD 209458b}
+\section{\siIV\ Absorption by HD 209458b}
 
 \citet{viddisc} observed HD 209458b with the Hubble STIS instrument and found
 an extended Hydrogen and Carbon atmosphere by fitting the light curves
 to the near-UV \hi\, \oi\ and \cii\ lines during a transit. They found no absorption in \siIV\ when trying to fit the light curve to a model of a circular planet occulting a {\it uniform} stellar disk.
 
-Instead of these Single-U models, we fit their \siIV\ 1394 \AA\ data (\citep{vidmad}, Figure 3) with a Double U model as given in equation \label{disk} because \siIV\ is limb brightened. The extent of limb brightening is evident in Figure \ref{limbs}. Our Double-U model has a $\chi^2$ to be 22\%\ less that fitting the data to
+Instead of the uniform disk, single-U model, we fit their \siIV\ 1394 \AA\ data (\citet{vidmad}, Figure 3) with a Double U model as given in equation \ref{disk}. This model is appropriate for the \siIV\ emission, as evident in the Solar image in Figure \ref{limbs} (a). HD209458 is a type G0V star, close to Solar type. We fit the data with an impact parameter of 0.48 R$_*$, using the an inclination of 86.9$^\circ$ \citep{knutsonprop} and a semi-major axis a=8.82 R$_*$. 
+
+Using a Least-Squares fitting algorithm, 
+Our Double-U model has a $\chi^2$  22\%\ less that fitting the data to
 a horizontal line (representing no detection). This best-fit model has
 R$_p$/R$_*$ = 0.4, close to the 0.32 found by \citet{vidmad}. A
 re-analysis of this data for more optically thin lines could improve
@@ -397,7 +400,7 @@ the confidence levels of the fit.
 Visible/optical radius = 1.32 Rstar and Inclination = 86.9 degrees:   \citet{knutsonprop}
 
 \begin{figure}[!ht]
-\includegraphics[width=0.9 \textwidth]{hd209458.eps}
+\includegraphics[width=0.5 \textwidth]{hd209458.eps}
 \caption{The light curve of the limb-brightened chromospheric line \siIV\ during the transit of HD209458b, as taken by \citet{vidmad}. The solid line is a best fit model, using equation \ref{disk}  the radius is a free parameter. For reference, three different best-fit models are shown where the planet size is a fixed parameter: the dash dotted line has a R$_p$/R$_*$ = 0.323 as found by \citet{vidmad} for the Lyman-$\alpha$ absorption. The dashed curve is a horizontal line, corresponding to R$_p$/R$_*$ = 0 or a non-detection of \siIV\ absorption. The dash triple-dotted line is a model with a visible radius, R$_p$/R$_*$ = 0.323. All models have 1 free parameter that is an overall multiplier that sets the off-transit flux. The best-fit radius with R$_p$/R$_*$=0.323 and a $\chi^2$ of 0.868 is close to the model with the radius found by \citet{vidmad}, which indicates \siIV\ absorption from the whole Roche lobe. }
 \label{fig03}
 \end{figure}
