@@ -217,13 +217,14 @@ at the edge of the star.}
 \end{figure}
 
 We can compute the light curve for a negligible scale height ($h=0$) by finding the area of the the planet's shadow and dividing this by the surface area of a hemisphere with radius $R_*$. The volume of the intersection of a cylinder with a sphere is given by \citet{lamarche} and we find the surface area of the intersection by taking a partial derivative with respect to radius. The result can expressed analytically in terms of elliptic integrals.
-Let $x$ be the distance, in units of stellar radii $R_*$, from the center of the planet to the center of the star projected onto a plane perpendicular to the observer. This is the apparent distance seen by an observer. 
+Let $x$ be the distance, in units of stellar radii $R_*$, from the center of the planet to the center of the star projected onto a plane perpendicular to the observer. This is the apparent distance seen by an observer. To calculate the light curve for a planet that does not pass through the center of the star, one can simply write $x(t)$ as $\sqrt{t^2+b^2}$, where $t$ is the distance to the closest approach point in stellar radii $R_*$ and $b$ is the impact parameter (the planet-star distance at closest approach) in stellar radii $R_*$. 
 %Let $b$ be the impact parameter of center of the planet relative to
 %the center of the star in units of the radius of the star, as
 %seen by an observer. 
 %Let $a = A_t/R_*^2$ be the dimensionless transit
 %area, and $f(b,p)=1-\frac{a}{2\pi}$ is the transit light curve.
-The transit depth, $\delta (x)$, is zero when $x > 1 + p$ since no emission is blocked by the planet.
+
+The transit depth, $\delta (x)$ is split up into three different regimes: $0 < x < 1 -p$, $1 - p < x < 1+p$ and $ x > 1+p$. The transit depth, $\delta (x)$ = 0 when $x > 1 + p$ since no emission is blocked by the planet.
 For $1-p < x < 1-x$, the planet straddles the edge of the star, and
 depth of transit is:
 \begin{eqnarray}\label{ingress}
@@ -258,20 +259,17 @@ evaluate the elliptic integrals diverge.  However, these locations
 are a set of measure zero, and thus should almost never be encountered
 when modeling data.
 
-\subsection{Dependence on planet size}
+%\subsection{Dependence on planet size}
 
-Figure \ref{fig02} plots the transit light curves for planet of
-two different sizes, $p=0.02$ and $p=0.04$ versus the planet-star
-separation, $x$.  The analytic estimate does a remarkably good
-job in predicting the maximum depth of a chromospheric transit,
-which means that the chromospheric depth is 3.5 and 2.5 times
-deeper for the two planets, respectively.  Although the smaller
-planet has a transit depth that is 25\% of the larger planet's
-transit depth for a star without limb-darkening, the maximum 
-chromospheric transit depth for the smaller planet is 35\% that 
-of the larger planet, and is nearly as deep as the transit of 
-the larger planet.  Note that the duration of ingress/egress 
-scales with the size of the planet in both cases.  
+Figure \ref{fig02} (solid curve) shows the transit light curve (1-$\delta (x)$) for planet that has \p =0.02 using our thin-shell approximation.  The analytic estimate given by equation \ref{depth_anal} and the more detailed equations \ref{ingress} and \ref{disk} agree well, predicting maximum chromospheric depths to be 3.5 times
+deeper than for uniform disk brightness.\footnote{For a uniform disk emission $\delta_{\mathrm{max}} $=(\p )$^2$.} It should also be noted that most limb brightened lines are in the ultraviolet, where planets absorb light from a larger radius than for optical and infrared wavelengths \citep{vidmad}. This means that transits of ultraviolet emission lines are boosted {\it doubly} over optical emission.
+%Although the smaller
+%planet has a transit depth that is 25\% of the larger planet's
+%transit depth for a star without limb-darkening, the maximum 
+%chromospheric transit depth for the smaller planet is 35\% that 
+%of the larger planet, and is nearly as deep as the transit of 
+%the larger planet.  Note that the duration of ingress/egress 
+%scales with the size of the planet in both cases.  
 
 There are several consquences of the deeper transit depth:
 (1) transit-timing precision is higher for a chromospheric
@@ -320,7 +318,7 @@ estimate of the maximum chromospheric transit depth\ref{depth_anal}.}
 \begin{figure}
 \begin{center}
 \includegraphics[width=0.5\textwidth]{limb_compare_siIV_heII.eps}
-\caption{(a) \siIV\ emission from the Solar limb as observed by SUMER (Solar Ultraviolet Measurement of Emitted Radiation) \citep{wiik} is strongly limb-brightened. We employ for \siIV\ emission, and whose light curve is given by  equation \ref{disk}. (b) \heII\ 304 \AA\ image of the solar limb, taken by the Extreme-ultraviolet Imaging Telescope \citep{feldman} is, by contrast, not limb brightened because it is optically thick in the chromosphere and thus the additional column density at the limb does not contribute any more flux then the central disk.}
+\caption{(a) \siIV\ emission from the Solar limb as observed by SUMER (Solar Ultraviolet Measurement of Emitted Radiation) \citep{wiik} is strongly limb-brightened, indicating that a transit of this emission line should have a Double-U light curve. (b) \heII\ 304 \AA\ image of the solar limb, taken by the Extreme-ultraviolet Imaging Telescope \citep{feldman} is, by contrast, not limb brightened because it is optically thick in the chromosphere and thus the additional column density at the limb does not contribute any more flux then the central disk.}
 \label{limbs}
 \end{center}
 \end{figure}
@@ -331,13 +329,15 @@ estimate of the maximum chromospheric transit depth\ref{depth_anal}.}
 an extended Hydrogen and Carbon atmosphere by fitting the light curves
 to the near-UV \hi\, \oi\ and \cii\ lines during a transit. They found no absorption in \siIV\ when trying to fit the light curve to a model of a spherical planet occulting a {\it uniform} stellar disk.
 
-Instead of the uniform disk, single-U model, we fit their \siIV\ 1394 \AA\ data (\citet{vidmad}, Figure 3) with a Double-U model as given in equation \ref{disk}. This model is appropriate for the \siIV\ emission, as evident in the Solar image in Figure \ref{limbs} (a) where strong limb-brightening is apparent; we assume that HD209458 has a similar emission structure to the Sun because it is a G0V star, close to the Solar type.
+We fit their \siIV\ 1394 \AA\ data (\citet{vidmad}, Figure 3) with a Double-U model given by equations \ref{ingress} and \ref{disk}. This model is appropriate for the \siIV\ emission, as evident in the Solar image in Figure \ref{limbs} (a) where strong limb-brightening is apparent; we assume that HD209458 is also limb-brightened because it is a G0V star, close to the Solar type.
 
-Our best fit model has two free parameters: the planet/star radius ratio \p\ and an overall constant that sets the off transit-flux. The second parameter is necessary since the off-transit flux is poorly constrained. The impact parameter, 
+Our best fit model has two free parameters: the planet/star radius ratio \p\ and an overall constant that sets the off transit-flux. The second parameter is necessary since the off-transit flux is poorly constrained. The impact parameter 
 %described in $\mathsection$\ref{labl:thinshell}
  is fixed for the model. We adopt a value of 0.48 R$_*$, using the an inclination of 86.9$^\circ$ \citep{knutsonprop} and a semi-major axis a=8.82 R$_*$.
 
-Figure \ref{lightc} shows the light curve for \citet{vidmad}'s data and our best fit model. In addition to the best fit model, we show three more limb brightened models where \p\ is a fixed parameter for comparison. These include \p\ equal to 0, 0.12, and 0.32 representing no \siIV\ absorption, the optical radius (\citep{knutsonprop}) and the \hi\ radius\footnote{This was found by \citet{vidmad} for absorption of the wings of the \lya\ emission profile}, respectively.
+Figure 5
+%\ref{lightc} !!!!!!!!! Why doesn't this ref{} work properly It says 3!!.
+ shows the light curve for \citet{vidmad}'s data and our best fit model. In addition to the best fit model, we show three more limb brightened models where \p\ is a fixed parameter for comparison. These include \p\ equal to 0, 0.12, and 0.32 representing no \siIV\ absorption, the optical radius (\citep{knutsonprop}) and the \hi\ radius\footnote{This was found by \citet{vidmad} for absorption of the wings of the \lya\ emission profile}, respectively.
 
 Using a Levenberg-Marquardt fitting algorithm \citep{mpfit}, we find that \p\ = 0.34 $\pm$ 0.15. 
 Our Double-U model has a $\chi^2$  22\%\ less that fitting the data to
@@ -360,23 +360,23 @@ R$_p$/R$_*$ = 0.34, close to the 0.32 found by \citet{vidmad} for the narrowband
 
 Limb brightening has important effects on transit light curves, especially when considering optically thin emission lines from the star. A Double-U model for the \siIV\ transit fits the data better than a non-detection, even when accounting for the additional degrees of freedom in the model. Our best fit model gives a \siIV\ transit depth of 11$^{+9}_{-6}$\% at the limb  of the star, which requires a layer of Si$^{3+}$ as large or even larger than the planet's Roche lobe.
 
-The \siIV\ transit depth is comparable to the \oi\ transit depth calculated by \citet{vidmad} and the \hi\ transit depth calculated by \citet{benjaf7}. As \citet{kosk} point out, a hard sphere is a poor approximation to atmospheric absorption. The \siIV\ absorption profile, instead of having a sharp transition from opaque to transparent, should changes smoothly from optically thick to optically thin absorption in a more accurate model. In order to explain the large transit depth, this smooth model would have to have a radius extending beyond the planet's Roche lobe, R$_{Roche}$/R$_*$ = 0.35 \citep{ben10} to explain the observed transit depth.
+The \siIV\ transit depth is comparable to the \oi\ transit depth calculated by \citet{vidmad} and the \hi\ transit depth calculated by \citet{benjaf7}. As \citet{kosk} point out, a hard sphere, which we assume in equations \ref{ingress} and \ref{disk}, is a poor approximation to atmospheric absorption. The \siIV\ absorption profile, instead of having a sharp transition from opaque to transparent, should changes smoothly from optically thick to optically thin absorption in a more accurate model. In order to explain the large transit depth, this smooth model would have to have a radius extending beyond the planet's Roche lobe, R$_{Roche}$/R$_*$ = 0.35 \citep{ben10} to explain the observed transit depth.
 
-Our best-fit transit depth supports models with high concentrations of metallic ions in the atmosphere. \citet{kosk} point out that if the metallicity is high, the temperature must also be elevated. The $\approx$ 10,000 K temperature suggested by \citet{gmunoz}, \citet{mclay}, and \citet{kosk} for the thermosphere may not explain large abundances of Si$^{3+}$ needed for the observed absorption. 
+Our best-fit transit depth supports models with high concentrations of metallic ions in the atmosphere because the depth of \siIV\ absorption is as large as for \hi\ absoprtion. \citet{kosk} point out that if the metallicity is high, the temperature must also be elevated. The $\approx$ 10,000 K temperature suggested by \citet{gmunoz}, \citet{mclay}, and \citet{kosk} for the thermosphere may not explain large abundances of Si$^{3+}$ needed for the observed absorption. 
 
 % substantial mass flow from the planet onto the star? It is also possible that the \lya\ absorption and \siIV\ absorption come from different regions--\lya\ coming from ~3 R_p and \siIV\ from even higher up
 
 \citet{linsky}, like \citet{vidmad} find no \siIV\ absorption by HD209458b. They did not generate a full light curve however, and only observed \siIV\ mid-transit. It should be noted that for zero impact parameter, the mid-transit Double-U flux is $\approx 0.5 $(\p)$^2$ because the planet shadow is $\approx \pi {R_p}^2$ and the hemisphere has an area of 2$\pi {R_p}^2$. With the impact parameter of 0.477 (see $\mathsection$\ref{osiris}), we expect the mid-transit depth to be  7$^{+9}_{-5}$\%. 
 
-\citet{linsky} point out that the amount of Si$^{2+}$ may vary appreciably over short timescales because of change in stellar wind speed, planetary mass-loss rate or temperature changes. \citet{linsky} observed significant \siIII\ absorption at the same epoch in which they see no \siIV. The silicon could simply have changed ionization state, going from Si$^{3+}$ to Si$^{2+}$. The absorption features found at +20 and +40km/s in their spectrum could be some Silicon still in the Si$^{3+}$ ionization state.
+\citet{linsky} point out that the amount of Si$^{2+}$ may vary appreciably over short timescales because of change in stellar wind speed, planetary mass-loss rate or temperature changes. They observed significant \siIII\ absorption at the same epoch in which they see no \siIV. The silicon could simply have changed ionization state, going from Si$^{3+}$ to Si$^{2+}$. The absorption features found at +20 and +40km/s in their spectrum could be some Silicon still in the Si$^{3+}$ ionization state.
 
 Additional observations will help confirm or refute the detection of \siIV\ at the limb of HD209458b and also put further constraints on the system. With enough signal to noise, the light curve may reveal asymmetries in the transit having to do with asymmetric spatial distribution of the UV-absorbing cloud. The advantage of the limb brightened emission lines is that they come from a smaller spatial area of the star and therefore probe the spatial distribution of the planetary atmosphere better than optically thick emission. Accurate time resolved transit data may also reveal differences in {\it thermal} properties of the leading and trailing sides of the planet as predicted by \citet{fortney}.
 
 \section{Conclusion}
 
-Optically thin emission lines have a qualitatively different light curves from optically thick emission lines. The thin ones have maximum transit depths $\approx$ 0.5 (\p )$^{3/2}$ whereas thick ones have depths $\approx$ (\p )$^2$. The consequence of this scaling is that small planets will have larger transit depths in thin emission lines than thick lines. There is already an enhancement of UV lines over optical photometry due  to planets' extended atmosphere occulting more of the star than the optical radius \citep{kosk}, so the enhancement of transit depth for optically thin emission boosted doubly over optical measurements.
+Optically thin emission lines produce qualitatively different transit light curves than optically thick emission lines. The maximum transit depths at optically thin wavelengths is $\approx$ 0.5 (\p )$^{3/2}$ whereas thick ones have depths $\approx$ (\p )$^2$. The consequence of this scaling is that small planets will have larger transit depths in thin emission lines than thick lines. There is already an enhancement of UV lines over optical photometry due  to planets' extended atmosphere occulting more of the star than the optical radius \citep{kosk}, so the enhancement of transit depth for optically thin emission boosted doubly over optical measurements.
 
-The best time to observe these optically thin emission lines is when a planet crosses its host's limb and not at a phase of 0, since the Double-U curve is deepest at the stellar limb. Observations at the limb have a depth of $\approx$ 0.5 (\p )$^{3/2}$ whereas at the center of the star they only have a transit depth of  $\approx 0.5 $(\p)$^2$, half the depth of a uniform brightness transit. We stress the importance of considering spatial effects of the emission from the star in addition to the details of the planetary absorption.
+The best time to observe these optically thin emission lines is when a planet crosses its host's limb and not at a phase of 0, since the Double-U curve is deepest at the stellar limb. Observations at the limb have a depth of $\approx$ 0.5 (\p )$^{3/2}$ whereas at the center of the star they only have a transit depth of  $\approx 0.5 $(\p)$^2$, half the depth of a uniform brightness transit.
 
 HD209458b's \siIV\ light curve indicates that a Double-U model is an appropriate fit. We find that the equivalent occulting radius is \p=0.34 $\pm$ 0.15, if the absorption is entirely optically thick. This radius favors planetary atmosphere models with high metallicity and for mass flow beyond the planets' Roche lobe.
 \\
