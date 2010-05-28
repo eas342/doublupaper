@@ -159,29 +159,34 @@ compare this model UV light curve with \siIV\ emission from HD209458b in  $\math
 
 \subsection{A Chromospheric Light Curve Under The Thin-Shell Approximation}
 \label{labl:thinshell}
-If the scale-height of a star's chromosphere, $h$, is much smaller than the
-size of the planet ($R_p$) and star ($R_*$), then we can treat the
-chromosphere as a geometrically thin hemisphere of emission.  This
-limit has the problem that at the edge of the shell, the surface
-brightness will be infinite; this is an example classic fold-caustic.
-However, when one integrates the surface brightness over area, the
-total flux is finite, and thus this still proves to be a useful
-approximation.
+
+For optically thin emission, the total flux from the chromosphere is proportional to the total number of emitting species. If the emitting species are distributed with a uniform density, then the total flux is proportional to the volume of the chromosphere. We make the approximation that the scale-height of emission, $h$ is much smaller than the size of the planet ($R_p$) and star ($R_*$).
+
+Under this geometrically thin approximation the total flux from the star is proportional to the surface area of the hemisphere facing the Earth, as pictured in \ref{fig01} times its thickness $h$. The amount of emission that the planet blocks is then simply the amount of the surface that the planet covers times $h$. In this geometrical limit, therefore, the scale height of the chromosphere cancels out.
+
+%then we can treat the
+%chromosphere as a geometrically thin hemisphere of emission.  This
+%limit has the problem that at the edge of the shell, the surface
+%brightness will be infinite.
+%; this is an example classic fold-caustic.
+%However, when one integrates the surface brightness over area, the
+%total flux is finite, and thus this still proves to be a useful
+%approximation.
 
 %However, rather than integrating over surface brightness to compute
 %the transit depth, 
 %the depth of transit is simply the area of the 
 %hemisphere that is blocked by the planet, 
 
-We can estimate this maximum depth of transit as follows from
-Figure \ref{fig01}.  When the planet touches the edge of the star 
+We can estimate the maximum depth of transit as follows from
+Figure \ref{fig01} by comparing the total emitting area of the star to the total surface area blocked by the planet. This blocked surface is the same as the shadow produced by a sphere of radius $R_p$ onto a hemisphere of radius $R_*$. When the planet touches the edge of the star 
 (second contact), as shown from an edge-on viewpoint in this figure,
 then the length of the arc of the long axis of the shadow is
-$R_*\theta$.  Now, the diameter of the planet is given by 
+$R_*\theta$.  The diameter of the planet is 
 $2 R_p \approx R_*(1-\cos{\theta}) \approx \frac{1}{2} R_* \theta^2$,
 where the latter approximation is valid for $\theta \ll 1$.
 Solving for $\theta$, we find $\theta = 2\sqrt{R_p/R_*}$, so to
-be valid we require $R_p/R_* \ll 1/4$.  Now, we can approximate
+be valid we require $R_p/R_* \ll 1/4$.  We can approximate
 the shadow as an ellipse which will have a minor axis of $R_p$
 and a major axis of $R_*\theta$, so we can approximate the
 area of the shadow as $A_t = \pi \sqrt{R_pR_*} R_p$.  Thus,
@@ -189,8 +194,7 @@ the maximum depth of transit is given by
 \begin{equation} \label{depth_anal}
 {A_t \over \pi R_*^2} = \frac{1}{2} \left({R_p \over R_*}\right)^{3/2}.
 \end{equation}
-Note that this is a different scaling than that given in \citet{assef} who did not consider the fold-caustic nature of a chromospheric
-transits. The qualitative difference is pictured in Figure \ref{limbs}.
+Note that this is a different scaling than that given in \citet{assef} who assume that there is no emission from the central region of the star. The qualitative difference is pictured in Figure \ref{limbmodel}.
 
 %Koskinen et a. 2010 treat \oi emission as two separate pieces - limb and disk. Maybe this is OK if OI emission is optically thick
 
@@ -212,36 +216,43 @@ at the edge of the star.}
 \label{fig01}
 \end{figure}
 
-We can compute the light curve for $h=0$ in terms of elliptic integrals.
-Let $b$ be the impact parameter of center of the planet relative to
-the center of the star in units of the radius of the star, as
-seen by an observer.  Let $a = A_t/R_*^2$ be the dimensionless transit
-area, and $f(b,p)=1-\frac{a}{2\pi}$ is the transit light curve.
-For $b > 1+p$, there is no transit, so $a=0$.
-For $1+p > b > 1-p$, the planet straddles the edge of the star, and
+We can compute the light curve for a negligible scale height ($h=0$) by finding the area of the the planet's shadow and dividing this by the surface area of a hemisphere with radius $R_*$. The volume of the intersection of a cylinder with a sphere is given by \citet{lamarche} and we find the surface area of the intersection by taking a partial derivative with respect to radius. The result can expressed analytically in terms of elliptic integrals.
+Let $x$ be the distance, in units of stellar radii $R_*$, from the center of the planet to the center of the star projected onto a plane perpendicular to the observer. This is the apparent distance seen by an observer. 
+%Let $b$ be the impact parameter of center of the planet relative to
+%the center of the star in units of the radius of the star, as
+%seen by an observer. 
+%Let $a = A_t/R_*^2$ be the dimensionless transit
+%area, and $f(b,p)=1-\frac{a}{2\pi}$ is the transit light curve.
+The transit depth, $\delta (x)$, is zero when $x > 1 + p$ since no emission is blocked by the planet.
+For $1-p < x < 1-x$, the planet straddles the edge of the star, and
 depth of transit is:
 \begin{eqnarray}\label{ingress}
-a&=&2\pi\Theta(p-b) +\\
-&& {1\over \sqrt{bp}} \left[{b+p\over b-p}\Pi(n,k)-4bpE(k)-(1-2p(b+p))K(k)\right] \cr
-k&=&\sqrt{1-(b-p)^2\over 4bp}, \cr 
-n&=&(b-p)^{-2}-1,
+a&=&2\pi\Theta(p-x) +\\
+&& {1\over \sqrt{xp}} \left[{x+p\over x-p}\Pi(n,k)-4xpE(k)-(1-2p(x+p))K(k)\right] \cr
+k&=&\sqrt{1-(x-p)^2\over 4xp}, \cr 
+n&=&(x-p)^{-2}-1,
 \end{eqnarray}
 where $K(k)$, $E(k)$, and $\Pi(n,k)$ are complete Legendre elliptic 
 integrals of the first, second, and third kinds, and $\Theta(x)$ is
-the Heaviside step function.
+the Heaviside step function. Explicitly,
+\begin{eqnarray}\label{ellipint}
+K(k)&=&\int^1_0 {dz \over \sqrt{1-z^2}\sqrt{1-k^2 z^2}}, \cr
+E(k)&=&\int^1_0 {dz \sqrt{1-z^2} \over \sqrt{1-k^2 z^2} }, \cr
+\Pi(n,k)&=&\int^1_0 {dz \over \left( 1+n z^2 \right) \sqrt{1-z^2} \sqrt{1-k^2 z^2} }
+\end{eqnarray}
 
-For $0 < b < 1-p$, the planet is fully contained within the disk of the star,
+For $0 < x < 1-p$, the planet is fully contained within the disk of the star,
 and the transit depth is:
 \begin{eqnarray}\label{disk}
-a&=&2\pi\Theta(p-b)+\\
-&&{k\over \sqrt{bp}}\left[{b+p\over b-p}\Pi(n,k)-4bpk^{-2}E(k)
-             +(p^2-b^2)K(k)\right],\cr
-k&=&\sqrt{4bp\over 1-(b-p)^2},\cr
-n&=&4bp/(b-p)^2.
+a&=&2\pi\Theta(p-x)+\\
+&&{k\over \sqrt{xp}}\left[{x+p\over x-p}\Pi(n,k)-4xpk^{-2}E(k)
+             +(p^2-x^2)K(k)\right],\cr
+k&=&\sqrt{4xp\over 1-(x-p)^2},\cr
+n&=&4xp/(x-p)^2.
 \end{eqnarray}
 
 These formulae are difficult to evaluate numerically at 
-$b=p$ and $b=1-p$ due to the divergenced of $K(1)$ and $\Pi(n,1)$,
+$x=p$ and $x=1-p$ due to the divergenced of $K(1)$ and $\Pi(n,1)$,
 ; the divergences cancel out analytically, but routines that
 evaluate the elliptic integrals diverge.  However, these locations
 are a set of measure zero, and thus should almost never be encountered
@@ -251,7 +262,7 @@ when modeling data.
 
 Figure \ref{fig02} plots the transit light curves for planet of
 two different sizes, $p=0.02$ and $p=0.04$ versus the planet-star
-separation, $b$.  The analytic estimate does a remarkably good
+separation, $x$.  The analytic estimate does a remarkably good
 job in predicting the maximum depth of a chromospheric transit,
 which means that the chromospheric depth is 3.5 and 2.5 times
 deeper for the two planets, respectively.  Although the smaller
