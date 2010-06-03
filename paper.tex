@@ -154,14 +154,12 @@ $\mathsection$\ref{labl:chromlcurve} we calculate the expected limb
 brightened light curve for an optically thin emission line. We
 compare this model UV light curve with \siIV\ emission from HD209458b in  $\mathsection$\ref{osiris} and discuss the implications for HD209458b's exosphere in $\mathsection$\ref{discuss}.
 
-\section{Limb Brightened Curves} \label{labl:chromlcurve}
-
-\subsection{A Chromospheric Light Curve Under The Thin-Shell Approximation}
+\section{A Limb Brightened Curve Under The Thin-Shell Approximation} \label{labl:chromlcurve}
 \label{labl:thinshell}
 
-For optically thin emission, the total flux from the chromosphere is proportional to the total number of emitting species. If the emitting species are distributed with a uniform density, then the total flux is proportional to the volume of the chromosphere. We make the approximation that the scale-height of emission, $h$ is much smaller than the size of the planet ($R_p$) and star ($R_*$).
+For optically thin emission, the total flux from the chromosphere is proportional to the total number of emitting species. If the emitting species are distributed with a uniform density, then the total flux is proportional to the volume of the chromosphere. We make the approximation that the scale-height of emission, $h$, is much smaller than the size of the planet ($R_p$) and star ($R_*$).
 
-Under this geometrically thin approximation, the total flux from the star is proportional to the surface area of the hemisphere facing the Earth, as pictured in Figure \ref{fig01} times its thickness $h$. The amount of emission that the planet blocks is then simply the amount of the surface that the planet covers times $h$. In this geometrical limit, therefore, the scale height of the chromosphere cancels out.
+Under this geometrically thin approximation, the total flux from the star is proportional to the surface area of the hemisphere facing the Earth, as pictured in Figure \ref{fig01}, times its thickness $h$. The amount of emission that the planet blocks is then simply the amount of the stellar surface that the planet covers times $h$. In this geometrical limit, therefore, the scale height of the chromosphere cancels out.
 
 %then we can treat the
 %chromosphere as a geometrically thin hemisphere of emission.  This
@@ -186,12 +184,12 @@ $2 R_p \approx R_*(1-\cos{\theta}) \approx \frac{1}{2} R_* \theta^2$,
 where the latter approximation is valid for $\theta \ll 1$.
 Solving for $\theta$, we find $\theta = 2\sqrt{R_p/R_*}$, so to
 be valid we require $R_p/R_* \ll 1/4$.  We can approximate
-the shadow as an ellipse which will have a minor axis of $R_p$
-and a major axis of $R_*\theta$, so we can approximate the
+the shadow as an ellipse which will have a semi-minor axis of $R_p$
+and a semi-major axis of $R_*\theta$, so we can approximate the
 area of the shadow as $A_t = \pi \sqrt{R_pR_*} R_p$.  Thus,
 the maximum depth of transit is given by 
 \begin{equation} \label{depth_anal}
-{A_t \over \pi R_*^2} = \frac{1}{2} \left({R_p \over R_*}\right)^{3/2}.
+\delta_{\mathrm{max}} = {A_t \over 2 \pi R_*^2} = \frac{1}{2} \left({R_p \over R_*}\right)^{3/2}
 \end{equation}
 Note that this is a different scaling than that given in \citet{assef} who assume that there is no emission from the central region of the star. The qualitative difference is pictured in Figure \ref{limbmodel}.
 
@@ -203,7 +201,7 @@ a transit of a uniform disk.  A chromospheric transit has a maximum
 depth that is $\frac{1}{2} \left({R_* \over R_p}\right)^{1/2}$
 times deeper than the maximum transit depth of a uniform disk;
 thus smaller planets have an advantage to be observed at
-chromospheric wavelengths, as emphasized by \citet{assef}. It should also be noted that most limb brightened lines are in the ultraviolet, where planets absorb light from a larger radius than for optical and infrared wavelengths \citep{vidmad}. This means that transits of ultraviolet emission lines are boosted {\it doubly} over optical emission, once for the (\p )$^{1/2}$ scaling and once for the additional atmospheric absorption.
+chromospheric wavelengths, as emphasized by \citet{assef}. It should also be noted that most limb brightened lines are in the ultraviolet, where planets absorb light from a larger radius than for optical and infrared wavelengths \citep{vidmad}. This means that maximum transit depths of ultraviolet emission lines are enhanced {\it doubly} over optical emission, once for the (\p )$^{1/2}$ scaling and once for the additional atmospheric absorption.
 
 \begin{figure}
 %\centerline{\psfig{figure=Chromospheric_shadow.eps,width=4in}}
@@ -227,7 +225,7 @@ For $1-p < x < 1-x$, the planet straddles the edge of the star, and
 depth of transit is:
 \begin{eqnarray}\label{ingress}
 \delta(x)&=&\Theta(p-x) +\\
-&& {1\over 2 \pi \sqrt{xp}} \left[{x+p\over x-p}\Pi(n,k)-4xpE(k)-(1-2p(x+p))K(k)\right] \cr
+&& {1\over 2 \pi \sqrt{xp}} \left[{x+p\over x-p}\Pi(n,k)-4xpE(k) -(1-2p(x+p))K(k)\right] \cr
 k&=&\sqrt{1-(x-p)^2\over 4xp}, \cr 
 n&=&(x-p)^{-2}-1,
 \end{eqnarray}
@@ -259,8 +257,8 @@ when modeling data.
 
 %\subsection{Dependence on planet size}
 
-Figure \ref{fig02} (solid curve) shows the transit light curve (1-$\delta (x)$) for planet that has \p =0.08 using a thin-shell approximation.  The analytic estimate given by equation \ref{depth_anal} and the more detailed equations \ref{ingress} and \ref{disk} agree well, predicting maximum chromospheric depths to be 1.8 times
-deeper than for uniform disk brightness.\footnote{For a uniform disk emission $\delta_{\mathrm{max}} $=$(\pi R_p / \pi R_*)^2$.} 
+Figure \ref{fig02} (solid curve) shows the transit light curve (1-$\delta (x)$) for a planet that has \p =0.08 using a thin-shell approximation.  The analytic estimate given by equation \ref{depth_anal} and the more detailed equations \ref{ingress} and \ref{disk} agree well, predicting maximum chromospheric depths to be 1.8 times
+deeper than for uniform disk brightness.\footnote{For a uniform disk emission $\delta_{\mathrm{max}} $=$\pi R_p^2 /(\pi R_*^2)$.} 
 %Although the smaller
 %planet has a transit depth that is 25\% of the larger planet's
 %transit depth for a star without limb-darkening, the maximum 
@@ -269,20 +267,17 @@ deeper than for uniform disk brightness.\footnote{For a uniform disk emission $\
 %the larger planet.  Note that the duration of ingress/egress 
 %scales with the size of the planet in both cases.  
 
-There are several consquences of the deeper transit depth:
-(1) transit-timing precision is higher for a chromospheric
-transit than for a uniform disk transit by a factor of
-$\sim p^{-1/2}$ assuming the same signal-to-noise for
-both light curves; (2) the larger depth and short duration
-of the chromospheric transit can make detection of giant
-planets transiting sub-giant stars greater possibility;
-and (3) since the advantage of chromospheric transits
-over continuum transits grows as $\frac{1}{2}p^{-1/2}$,
-the chromospheric transits have a greater advantage for
-transit detection of small planets. For instance,
-for $p=0.01$, the chromospheric transit is $5\times$
-deeper, which is appropriate for Earth-Sun transits
-or giant planets transiting a $10R_\odot$ star. The transit will be even deeper if the planet's atmosphere extends beyond the visible radius.
+%There are two consequences of the deeper transit depth:
+%(1) the larger depth and short duration
+%of the chromospheric transit can make detection of giant
+%planets transiting sub-giant stars greater possibility, as emphasized by \citet{assef}
+%and (2) since the advantage of chromospheric transits
+%over continuum transits grows as $\frac{1}{2}p^{-1/2}$,
+%the chromospheric transits have a greater advantage for
+%transit detection of small planets. For instance,
+%for $p=0.01$, the chromospheric transit is $5\times$
+%deeper, which is appropriate for Earth-Sun transits
+%or giant planets transiting a $10R_\odot$ star. The transit will be even deeper if the planet's atmosphere extends beyond the visible radius.
 
 %Although the considerations in this section apply
 %for the geometrically-thin shell approximation,
@@ -325,15 +320,15 @@ We fit their \siIV\ 1394 \AA\ data (\citet{vidmad}, Figure 3) with a Double-U mo
 
 The best fit model has two free parameters: the planet/star radius ratio \p\ and an overall constant that sets the off transit-flux. The second parameter is necessary since the off-transit flux is poorly constrained. The impact parameter 
 %described in $\mathsection$\ref{labl:thinshell}
- is fixed for the model. We adopt a value of 0.48 R$_*$, using the an inclination of 86.9$^\circ$ \citep{knutsonprop} and a semi-major axis a=8.82 R$_*$.
+ is fixed for the model. We adopt a value of $ b= 0.48 R_*$, using the an inclination of 86.9$^\circ$ \citep{knutsonprop} and a semi-major axis $a=8.82 R_*$.
 
 Figure 5
 %\ref{lightc} !!!!!!!!! Why doesn't this ref{} work properly It says 3!!.
  shows the light curve for \citet{vidmad}'s data and the best fit model. In addition to the best fit model, we show three more limb brightened models where \p\ is a fixed parameter for comparison. These include \p\ equal to 0, 0.12, and 0.32 representing no \siIV\ absorption, the optical radius \citep{knutsonprop} and the \hi\ radius\footnote{This was found by \citet{vidmad} for absorption of the wings of the \lya\ emission profile}, respectively.
 
 Using a Levenberg-Marquardt fitting algorithm \citep{mpfit}, we find that \p\ = 0.34 $\pm$ 0.15. 
-The Double-U model has a $\chi^2$  22\%\ less that fitting the data to
-a horizontal line (representing no detection). This best-fit model has
+The Double-U model has a total $\chi^2$ 3.1 less that fitting the data to
+a horizontal line (representing no detection), where the Double-U model has 10 degrees of freedom and the horizontal line has 11. This best-fit model has
 R$_p$/R$_*$ = 0.34, close to the 0.32 found by \citet{vidmad} for the narrowband \lya\ detection, representing absorption of \siIV\ by a Roche Lobe-sized atmosphere. Both the Bayesian Information Criterion and Akaike Information Criterion favor the Double U model, even though they punish additional parameters more strongly. The BIC for a Double U model is -16.3 and is -14.9 for the horizontal line model.
 
 %Additional d
