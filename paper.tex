@@ -221,31 +221,33 @@ Let $x$ be the distance, in units of stellar radii $R_*$, from the center of the
 %area, and $f(b,p)=1-\frac{a}{2\pi}$ is the transit light curve.
 
 The transit depth, $\delta (x)$ is split up into three different regimes: $0 < x < 1 -p$, $1 - p < x < 1+p$ and $ x > 1+p$. The transit depth, $\delta (x)$ = 0 when $x > 1 + p$ since no emission is blocked by the planet.
-For $1-p < x < 1-x$, the planet straddles the edge of the star, and
+For $1-p < x < 1+p$, the planet straddles the edge of the star, and
 depth of transit is:
 \begin{eqnarray}\label{ingress}
 \delta(x)&=&\Theta(p-x) +\\
-&& {1\over 2 \pi \sqrt{xp}} \left[{x+p\over x-p}\Pi(n,k)-4xpE(k) -(1-2p(x+p))K(k)\right] \cr
-k&=&\sqrt{1-(x-p)^2\over 4xp}, \cr 
-n&=&(x-p)^{-2}-1,
+&& {1\over 2 \pi \sqrt{xp}} \left[{x+p\over x-p}\Pi(n,m)-4xpE(m) -(1-2p(x+p))K(m)\right] \cr
+m&=&1-(x-p)^2\over 4xp, \cr 
+n&=&1-(x-p)^{-2},
 \end{eqnarray}
-where $K(k)$, $E(k)$, and $\Pi(n,k)$ are complete Legendre elliptic 
+where $K(m)$, $E(m)$, and $\Pi(n,m)$ are complete Legendre elliptic 
 integrals of the first, second, and third kinds, and $\Theta(x)$ is
-the Heaviside step function. Explicitly,
+the Heaviside step function. For elliptic integrals, we use the conventions of \citet{handbk}.
+
+ Explicitly,
 \begin{eqnarray}\label{ellipint}
-K(k)&=&\int^1_0 {dz \over \sqrt{1-z^2}\sqrt{1-k^2 z^2}}, \cr
-E(k)&=&\int^1_0 {dz \sqrt{1-z^2} \over \sqrt{1-k^2 z^2} }, \cr
-\Pi(n,k)&=&\int^1_0 {dz \over \left( 1+n z^2 \right) \sqrt{1-z^2} \sqrt{1-k^2 z^2} }
+K(m)&=&\int^1_0 {dz \over \sqrt{1-z^2}\sqrt{1-m z^2}}, \cr
+E(m)&=&\int^1_0 {dz \sqrt{1-z^2} \over \sqrt{1-m z^2} }, \cr
+\Pi(n,m)&=&\int^1_0 {dz \over \left( 1-n z^2 \right) \sqrt{1-z^2} \sqrt{1-m z^2} }
 \end{eqnarray}
 
 For $0 < x < 1-p$, the planet is fully contained within the disk of the star,
 and the transit depth is:
 \begin{eqnarray}\label{disk}
 \delta(x)&=&\Theta(p-x)+\\
-&&{k\over 2 \pi \sqrt{xp}}\left[{x+p\over x-p}\Pi(n,k)-4xpk^{-2}E(k)
-             +(p^2-x^2)K(k)\right],\cr
-k&=&\sqrt{4xp\over 1-(x-p)^2},\cr
-n&=&4xp/(x-p)^2.
+&&{\sqrt{m} \over 2 \pi \sqrt{xp}}\left[{x+p\over x-p}\Pi(n,m)-\frac{4xp}{m}E(m)
+             +(p^2-x^2)K(m)\right],\cr
+m&=&4xp\over 1-(x-p)^2,\cr
+n&=&-4xp/(x-p)^2.
 \end{eqnarray}
 
 These formulae are difficult to evaluate numerically at 
