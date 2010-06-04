@@ -176,7 +176,7 @@ Under this geometrically thin approximation, the total flux from the star is pro
 %hemisphere that is blocked by the planet, 
 
 We can estimate the maximum depth of transit as follows from
-Figure \ref{fig01} by comparing the total emitting area of the star to the total surface area blocked by the planet. The blocked surface is the same as the shadow produced by a sphere of radius $R_p$ onto a hemisphere of radius $R_*$. When the planet touches the edge of the star 
+Figure \ref{fig01} by comparing the total emitting area of the star to the total stellar surface area blocked by the planet. The blocked surface is the same as the shadow produced by a sphere of radius $R_p$ onto a hemisphere of radius $R_*$. When the planet touches the edge of the star 
 (second contact), as shown from an edge-on viewpoint in this figure,
 then the length of the arc of the long axis of the shadow is
 $R_*\theta$.  The diameter of the planet is 
@@ -208,7 +208,7 @@ chromospheric wavelengths, as emphasized by \citet{assef}. It should also be not
 %\includegraphics[trim = 1in 6in 2in 0.5in,clip,width=3
 %  in]{Chromospheric_shadow.eps}
 \includegraphics[width=0.5 \textwidth]{chrom_shadow2.eps}
-\caption{Edge-on view of area of emission that the planet blocks. This is the same as the area of a shadow cast by a sphere onto a hemisphere.}
+\caption{Edge-on view of area of stellar emission and the amount blocked by  a planet. This blocked surface area is the same as the area of a shadow cast by a sphere onto a hemisphere.}
 \label{fig01}
 \end{figure}
 
@@ -220,47 +220,26 @@ Let $x$ be the distance, in units of stellar radii $R_*$, from the center of the
 %Let $a = A_t/R_*^2$ be the dimensionless transit
 %area, and $f(b,p)=1-\frac{a}{2\pi}$ is the transit light curve.
 
-The transit depth, $\delta (x)$ is split up into three different regimes: $0 < x < 1 -p$, $1 - p < x < 1+p$ and $ x > 1+p$. The transit depth, $\delta (x)$ = 0 when $x > 1 + p$ since no emission is blocked by the planet.
+The transit depth, $\delta (x)$ is split up into three different regimes: $0 < x < 1 -p$, $1 - p < x < 1+p$ and $ 1+p < x$. The transit depth, $\delta (x)$ = 0 when $x > 1 + p$ since no emission is blocked by the planet.
 For $1-p < x < 1+p$, the planet straddles the edge of the star, and
-depth of transit is:
-\begin{eqnarray}\label{ingress}
-\delta(x)&=&\Theta(p-x) +\\
-&& {1\over 2 \pi \sqrt{xp}} \left[{x+p\over x-p}\Pi(n,m)-4xpE(m) -(1-2p(x+p))K(m)\right] \cr
-m&=&1-(x-p)^2\over 4xp, \cr 
-n&=&1-(x-p)^{-2},
-\end{eqnarray}
-where $K(m)$, $E(m)$, and $\Pi(n,m)$ are complete Legendre elliptic 
-integrals of the first, second, and third kinds, and $\Theta(x)$ is
-the Heaviside step function. For elliptic integrals, we use the conventions of \citet{handbk}.
-
- Explicitly,
-\begin{eqnarray}\label{ellipint}
-K(m)&=&\int^1_0 {dz \over \sqrt{1-z^2}\sqrt{1-m z^2}}, \cr
-E(m)&=&\int^1_0 {dz \sqrt{1-z^2} \over \sqrt{1-m z^2} }, \cr
-\Pi(n;K(m)|m)&=&\int^1_0 {dz \over \left( 1-n z^2 \right) \sqrt{1-z^2} \sqrt{1-m z^2} }
-\end{eqnarray}
-
-For $0 < x < 1-p$, the planet is fully contained within the disk of the star,
-and the transit depth is:
-\begin{eqnarray} %\label{disk}
-\delta(x)&=&\Theta(p-x)+\\
-&&{\sqrt{m} \over 2 \pi \sqrt{xp}}\left[{x+p\over x-p}\Pi(n,m)-\frac{4xp}{m}E(m)
-             +(p^2-x^2)K(m)\right],\cr
-m&=&4xp\over 1-(x-p)^2,\cr
-n&=&-4xp/(x-p)^2.
-\end{eqnarray}
-
+ for $0 < x < 1-p$, the planet is fully contained within the disk of the star. The transit depth is 
+% Explicitly,
+%\begin{eqnarray}\label{ellipint}
+%K(m)&=&\int^1_0 {dz \over \sqrt{1-z^2}\sqrt{1-m z^2}}, \cr
+%E(m)&=&\int^1_0 {dz \sqrt{1-z^2} \over \sqrt{1-m z^2} }, \cr
+%\Pi(n;K(m)|m)&=&\int^1_0 {dz \over \left( 1-n z^2 \right) \sqrt{1-z^2} \sqrt{1-m z^2} }
+%\end{eqnarray}
 
 \begin{eqnarray}\label{disk}
-\delta(x)&=& \Theta (p-x)+\\
-&&\frac{a_0}{2 \pi \sqrt{xp}} \left[\frac{x+p}{x-p} \Pi(n;K(m)|m) - 4 x p a_1 E(m) - a_2 K(m) \right] \nonumber
+\delta(x)&=& \Theta (p-x)+\frac{a_0}{2 \pi \sqrt{xp}} \times \\
+&&\left[\frac{x+p}{x-p} \Pi(n,m) - 4 x p a_1 E(m) - a_2 K(m) \right] \nonumber
 \end{eqnarray}
 
 \begin{table}[htdp]
 %\caption{default}
 \begin{center}
 \begin{tabular}{c c c c}
- & $0 \le x \le p $& $1 - p < x \le 1+p $&$ 1+p < x $ \\
+ & $0 \le x \le 1-p $& $1 - p < x \le 1+p $&$ 1+p < x $ \\
 $a_0$ & $\sqrt{m} $& 1 & 0\\
 $a_1$ &$ \frac{1}{m} $& 1 & \\
 $a_2$ & $p^2-x^2 $& 1-2p(x+p) & \\
@@ -270,14 +249,14 @@ n & $-4xp/(x-p)^2$ & $1-(x-p)^{-2}$ & $$
 \end{center}
 \label{default}
 \end{table}%
-where $K(m)$, $E(m)$, and $\Pi(n;u|m)$ are complete Legendre elliptic 
+where $K(m)$, $E(m)$, and $\Pi(n,m)$ are complete Legendre elliptic 
 integrals of the first, second, and third kinds, and $\Theta(x)$ is
-the Heaviside step function. For the elliptic integrals, we use the conventions of \citet{handbk}.
+the Heaviside step function. For the elliptic integrals, we use the conventions of \citet{handbk} where $\Pi(n,m) = \Pi(n;K(m)|m)$ for the third elliptic integral.
 
 
 
 These formulae are difficult to evaluate numerically at 
-$x=p$ and $x=1-p$ due to the divergenced of $K(1)$ and $\Pi(n;K(1)|1)$
+$x=p$ and $x=1-p$ due to the divergenced of $K(1)$ and $\Pi(n,1)$
 ; the divergences cancel out analytically, but routines that
 evaluate the elliptic integrals diverge.  However, these locations
 are a set of measure zero, and thus should almost never be encountered
@@ -285,7 +264,7 @@ when modeling data.
 
 %\subsection{Dependence on planet size}
 
-Figure \ref{fig02} (solid curve) shows the transit light curve (1-$\delta (x)$) for a planet that has \p =0.08 using a thin-shell approximation.  The analytic estimate given by equation \ref{depth_anal} and the more detailed equations \ref{ingress} and \ref{disk} agree well, predicting maximum chromospheric depths to be 1.8 times
+Figure \ref{fig02} (solid curve) shows the transit light curve (1-$\delta (x)$) for a planet that has \p =0.08 using a thin-shell approximation.  The analytic estimate given by equation \ref{depth_anal} and the more detailed equation \ref{disk} agree well, predicting maximum chromospheric depths to be 1.8 times
 deeper than for uniform disk brightness.\footnote{For a uniform disk emission $\delta_{\mathrm{max}} $=$\pi R_p^2 /(\pi R_*^2)$.} 
 %Although the smaller
 %planet has a transit depth that is 25\% of the larger planet's
@@ -317,7 +296,7 @@ deeper than for uniform disk brightness.\footnote{For a uniform disk emission $\
 %\includegraphics[trim = 1in 6in 2in 0.5in,clip,width=3                         
 %  in]{comp_size.eps}                                                           
 \includegraphics[width=0.5 \textwidth]{model_compare2.eps}
-\caption{Transit light curve for \p $=0.08$, using a family of 3 different models. The solid line is a Double-U model, using equations \ref{ingress} and \ref{disk}. The Uniform model (dashed line) is one for which the emission is assumed to be constant across the stellar disk. The dot-dash line is a model where the emission is assumed to be only from the limb as pictured in Figure \ref{limbmodel}. Note that the Double-U models' minima are deeper than the uniform emission model and that these minima occur at the stellar limbs. }
+\caption{Transit light curve for \p $=0.08$, using a family of 3 different models. The solid line is a Double-U model, using equation \ref{disk}. The Uniform model (dashed line) is one for which the emission is assumed to be constant across the stellar disk. The dot-dash line is a model where the emission is assumed to be only from the limb as pictured in Figure \ref{limbmodel}. Note that the Double-U models' minima are deeper than the uniform emission model and that these minima occur at the stellar limbs. }
 \label{fig02}
 \end{figure}
 
@@ -341,10 +320,10 @@ deeper than for uniform disk brightness.\footnote{For a uniform disk emission $\
 \section{\siIV\ Absorption by HD 209458b} \label{osiris}
 
 \citet{viddisc} observed HD 209458b with the Hubble STIS instrument and found
-an extended Hydrogen and Carbon atmosphere by fitting the light curves
+an extended Hydrogen, Oxygen and Carbon atmosphere by fitting the light curves
 to the near-UV \hi\, \oi\ and \cii\ lines during a transit. They found no absorption in \siIV\ when trying to fit the light curve to a model of a spherical planet occulting a {\it uniform} stellar disk.
 
-We fit their \siIV\ 1394 \AA\ data (\citet{vidmad}, Figure 3) with a Double-U model given by equations \ref{ingress} and \ref{disk}. This model is appropriate for the \siIV\ emission, as evident in the Solar image in Figure \ref{limbs} (a) where strong limb-brightening is apparent; we assume that HD209458 is also limb-brightened because it is a G0V star, close to the Solar type.
+We fit their \siIV\ 1394 \AA\ data (\citet{vidmad}, Figure 3) with a Double-U model given by equation \ref{disk}. This model is appropriate for the \siIV\ emission, as evident in the Solar image in Figure \ref{limbs} (a) where strong limb-brightening is apparent; we assume that HD209458 is also limb-brightened because it is a G0V star, close to the Solar type.
 
 The best fit model has two free parameters: the planet/star radius ratio \p\ and an overall constant that sets the off transit-flux. The second parameter is necessary since the off-transit flux is poorly constrained. The impact parameter 
 %described in $\mathsection$\ref{labl:thinshell}
@@ -375,7 +354,7 @@ R$_p$/R$_*$ = 0.34, close to the 0.32 found by \citet{vidmad} for the narrowband
 
 Limb brightening has important effects on transit light curves, especially when considering optically thin emission lines from the star. The Double-U model for the \siIV\ transit fits the data better than a non-detection, even when accounting for the additional degrees of freedom in the model. The best fit model gives a \siIV\ transit depth of 11$^{+9}_{-6}$\% at the limb  of the star, which requires a layer of Si$^{3+}$ as large or even larger than the planet's Roche lobe.
 
-The \siIV\ transit depth is comparable to the \oi\ transit depth calculated by \citet{vidmad} and the \hi\ transit depth calculated by \citet{benjaf7}. As \citet{kosk} point out, a hard sphere, which we assume in equations \ref{ingress} and \ref{disk}, is a poor approximation to atmospheric absorption. The \siIV\ absorption profile, instead of having a sharp transition from opaque to transparent, should changes smoothly from optically thick to optically thin absorption in a more accurate model. In order to explain the large transit depth, this smooth model would have to have a radius extending beyond the planet's Roche lobe, R$_{Roche}$/R$_*$ = 0.35 \citep{ben10} to explain the observed transit depth.
+The \siIV\ transit depth is comparable to the \oi\ transit depth calculated by \citet{vidmad} and the \hi\ transit depth calculated by \citet{benjaf7}. As \citet{kosk} point out, a hard sphere, which we assume in equation \ref{disk}, is a poor approximation to atmospheric absorption. The \siIV\ absorption profile, instead of having a sharp transition from opaque to transparent, should changes smoothly from optically thick to optically thin absorption in a more accurate model. In order to explain the large transit depth, this smooth model would have to have a radius extending beyond the planet's Roche lobe, R$_{Roche}$/R$_*$ = 0.35 \citep{ben10} to explain the observed transit depth.
 
 The best-fit transit depth supports models with high concentrations of metallic ions in the atmosphere because the radius of \siIV\ absorption is as large as for \hi\ absorption. \citet{kosk} point out that if the metallicity is high, the temperature must also be elevated. The $\approx$ 10,000 K temperature suggested by \citet{gmunoz}, \citet{mclay}, and \citet{kosk} for the thermosphere may not explain large abundances of Si$^{3+}$ needed for the observed absorption. 
 
