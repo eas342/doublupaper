@@ -233,16 +233,16 @@ where $K(m)$, $E(m)$, and $\Pi(n,m)$ are complete Legendre elliptic
 integrals of the first, second, and third kinds, and $\Theta(x)$ is
 the Heaviside step function. For elliptic integrals, we use the conventions of \citet{handbk}.
 
- Explicitly,
-\begin{eqnarray}\label{ellipint}
-K(m)&=&\int^1_0 {dz \over \sqrt{1-z^2}\sqrt{1-m z^2}}, \cr
-E(m)&=&\int^1_0 {dz \sqrt{1-z^2} \over \sqrt{1-m z^2} }, \cr
-\Pi(n,m)&=&\int^1_0 {dz \over \left( 1-n z^2 \right) \sqrt{1-z^2} \sqrt{1-m z^2} }
-\end{eqnarray}
+% Explicitly,
+%\begin{eqnarray}\label{ellipint}
+%K(m)&=&\int^1_0 {dz \over \sqrt{1-z^2}\sqrt{1-m z^2}}, \cr
+%E(m)&=&\int^1_0 {dz \sqrt{1-z^2} \over \sqrt{1-m z^2} }, \cr
+%\Pi(n;K(m)|m)&=&\int^1_0 {dz \over \left( 1-n z^2 \right) \sqrt{1-z^2} \sqrt{1-m z^2} }
+%\end{eqnarray}
 
 For $0 < x < 1-p$, the planet is fully contained within the disk of the star,
 and the transit depth is:
-\begin{eqnarray}\label{disk}
+\begin{eqnarray} %\label{disk}
 \delta(x)&=&\Theta(p-x)+\\
 &&{\sqrt{m} \over 2 \pi \sqrt{xp}}\left[{x+p\over x-p}\Pi(n,m)-\frac{4xp}{m}E(m)
              +(p^2-x^2)K(m)\right],\cr
@@ -250,8 +250,34 @@ m&=&4xp\over 1-(x-p)^2,\cr
 n&=&-4xp/(x-p)^2.
 \end{eqnarray}
 
+
+\begin{eqnarray}\label{disk}
+\delta(x)&=& \Theta (p-x)+\\
+&&\frac{a_0}{2 \pi \sqrt{xp}} \left[\frac{x+p}{x-p} \Pi(n;K(m)|m) - 4 x p a_1 E(m) - a_2 K(m) \right] \nonumber
+\end{eqnarray}
+
+\begin{table}[htdp]
+%\caption{default}
+\begin{center}
+\begin{tabular}{c c c c}
+ & $0 \le x \le p $& $1 - p < x \le 1+p $&$ 1+p < x $ \\
+$a_0$ & $\sqrt{m} $& 1 & 0\\
+$a_1$ &$ \frac{1}{m} $& 1 & \\
+$a_2$ & $p^2-x^2 $& 1-2p(x+p) & \\
+m & $4xp\over 1-(x-p)^2$ & $\frac{1-(x-p)^2}{4xp}$$ $& \\
+n & $-4xp/(x-p)^2$ & $1-(x-p)^{-2}$ & $$
+\end{tabular}
+\end{center}
+\label{default}
+\end{table}%
+where $K(m)$, $E(m)$, and $\Pi(n;u|m)$ are complete Legendre elliptic 
+integrals of the first, second, and third kinds, and $\Theta(x)$ is
+the Heaviside step function. For the elliptic integrals, we use the conventions of \citet{handbk}.
+
+
+
 These formulae are difficult to evaluate numerically at 
-$x=p$ and $x=1-p$ due to the divergenced of $K(1)$ and $\Pi(n,1)$
+$x=p$ and $x=1-p$ due to the divergenced of $K(1)$ and $\Pi(n;K(1)|1)$
 ; the divergences cancel out analytically, but routines that
 evaluate the elliptic integrals diverge.  However, these locations
 are a set of measure zero, and thus should almost never be encountered
