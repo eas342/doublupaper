@@ -2,8 +2,9 @@
 \documentclass[manuscript]{aastex}
 
 
-%\documentclass[twocolumn]{emulateapj}
 
+%\documentclass[twocolumn]{emulateapj}
+\usepackage{amsmath}
 %% preprint2 produces a double-column, single-spaced document:
 %% Sometimes a paper's abstract is too long to fit on the
 %% title page in preprint2 mode. When that is the case,
@@ -17,7 +18,7 @@
 %% for information.
 
 \newcommand{\vdag}{(v)^\dagger}
-\newcommand{\numt}{80}
+\newcommand{\numt}{60}
 \newcommand{\cii}{\ensuremath{\mathrm{C}\,\scriptstyle \mathrm{II}}}
 \newcommand{\oi}{\ensuremath{\mathrm{O}\,\scriptstyle \mathrm{I}}}
 \newcommand{\hi}{\ensuremath{\mathrm{H}\,\scriptstyle \mathrm{I}}}
@@ -67,7 +68,7 @@ Detection of Si IV Absorption by HD209458b}
 \author{J. Lloyd}
 \affil{Astronomy Department, Cornell University, Ithaca NY 14850}
 \author{L. Walkowicz}
-\affil{Astronomy Department,University of California at Berkeley,Berkeley, CA 94720}
+\affil{Astronomy Department,University of California at Berkeley, `Berkeley, CA 94720}
 \author{K. Covey\altaffilmark{1}}
 \affil{Astronomy Department, Cornell University, Ithaca NY 14850}
 
@@ -112,8 +113,8 @@ Observations of extrasolar planetary transits are valuable tools for measuring p
 %%  Otherwise, LaTeX will issue an error. 
 
 \section{Introduction}
-Of the exoplanets so far discovered, more than \numt\ are known to
-transit their host star (\texttt{www.exoplanet.eu}) . Transits cause observable effects that can constrain exoplanetary composition and size, and accurate timing of transits can reveal when their orbits are perturbed by other bodies \citep{winnchap}. When these transits are observed in the ultraviolet, they show much deeper transits than for visible wavelengths, revealing that atmospheres extend far beyond the optical radius of planets \citep{vidmad,benjaf7,mclay,lecav,fossati}. Ultraviolet measurements also constrain atmospheric conditions and how much mass is escaping the planet's Roche lobe \citep{knutsonprop,gmunoz,linsky}.
+Of the exoplanets so far discovered and published, more than \numt\ are known to
+transit their host star (\texttt{http://exoplanets.org}) . Transits cause observable effects that can constrain exoplanetary composition and size, and accurate timing of transits can reveal when their orbits are perturbed by other bodies \citep{winnchap}. When these transits are observed in the ultraviolet, they show much deeper transits than for visible wavelengths, revealing that escaping atmospheres extend far beyond the optical radius of planets \citep{vidmad,benjaf7,mclay,lecav,fossati}. Ultraviolet measurements also constrain atmospheric conditions and how much mass is escaping the planet's Roche lobe \citep{knutsonprop,gmunoz,linsky}.
 
 For most transit light curves, the overall brightness of the system is at a minimum when the planet crosses the sub-earth longitude of the star (phase = 0.0). Depending on the extent of stellar limb darkening, the bottom of the light curve can be flat or curved concave up. This occurs with uniform stellar emission across the disk and limb darkening, respectively.
 % Even more information about their orbit can be gleaned from
@@ -235,20 +236,40 @@ For $1-p < x < 1+p$, the planet straddles the edge of the star, and
 &&\left[\frac{x+p}{x-p} \Pi(n,m) - 4 x p a_1 E(m) - a_2 K(m) \right] \nonumber
 \end{eqnarray}
 
-\begin{table}[htdp]
+%\begin{center}
+%\begin{eqnarray}
+%\begin{table}[htdp]
 %\caption{default}
-\begin{center}
-\begin{tabular}{c c c c}
- & $0 \le x \le 1-p $& $1 - p < x \le 1+p $&$ 1+p < x $ \\
-$a_0$ & $\sqrt{m} $& 1 & 0\\
-$a_1$ &$ \frac{1}{m} $& 1 & \\
-$a_2$ & $p^2-x^2 $& 1-2p(x+p) & \\
-m & $4xp\over 1-(x-p)^2$ & $\frac{1-(x-p)^2}{4xp}$$ $& \\
-n & $-4xp/(x-p)^2$ & $1-(x-p)^{-2}$ & $$
-\end{tabular}
-\end{center}
-\label{default}
-\end{table}%
+%\begin{tabular}{c c c c}
+%\begin{equation*}
+%\begin{align*}
+%x^2 + y^2 &= 1
+%\\ y &= \sqrt{1 - x^2}.
+%\end{align*}
+
+
+\begin{align*}
+&&0 < x < 1-p & & 1 - p < x < 1+p & & 1+p < x \\
+%$0 < x < 1-p $ & $1 - p < x \le 1+p $&$ 1+p < x $ \\
+ %$0 < x < 1-p $ & $1 - p < x \le 1+p $&$ 1+p < x $ \\
+a_0 && \sqrt{m} && 1 && 0\\
+%a_0$ & $\sqrt{m} $& 1 & 0\\
+a_1 && \frac{1}{m} && 1 && \\
+%$a_1$ &$ \frac{1}{m} $& 1 & \\
+%$a_2$ & $p^2-x^2 $& 1-2p(x+p) & \\
+a_2 && p^2-x^2 && 1-2p(x+p) && \\
+%m & $4xp\over 1-(x-p)^2$ & $\frac{1-(x-p)^2}{4xp}$$ $& \\
+m && 4xp\over 1-(x-p)^2 && \frac{1-(x-p)^2}{4xp} && \label{defs} \\ 
+%n & $-4xp/(x-p)^2$ & $1-(x-p)^{-2}$ & $$
+n && -4xp/(x-p)^2 && 1-(x-p)^{-2} &&
+\end{align*}
+%\end{tabular}
+
+
+%\end{table}
+%\end{eqnarray}
+
+%\end{center}
 where $K(m)$, $E(m)$, and $\Pi(n,m)$ are complete Legendre elliptic 
 integrals of the first, second, and third kinds, and $\Theta(x)$ is
 the Heaviside step function. For the elliptic integrals, we use the conventions of \citet{handbk} where $\Pi(n,m) = \Pi(n;K(m)|m)$ for the third elliptic integral.
@@ -256,7 +277,7 @@ the Heaviside step function. For the elliptic integrals, we use the conventions 
 
 
 These formulae are difficult to evaluate numerically at 
-$x=p$ and $x=1-p$ due to the divergenced of $K(1)$ and $\Pi(n,1)$
+$x=p$ and $x=1-p$ due to the divergence of $K(1)$ and $\Pi(n,1)$
 ; the divergences cancel out analytically, but routines that
 evaluate the elliptic integrals diverge.  However, these locations
 are a set of measure zero, and thus should almost never be encountered
@@ -373,6 +394,10 @@ Optically thin emission lines produce qualitatively different transit light curv
 The best time to observe these optically thin emission lines is when a planet crosses its host's limb and not at a phase of 0, since the Double-U curve is deepest at the stellar limb. Observations at the limb have a depth of $\approx$ 0.5 (\p )$^{3/2}$ whereas at the center of the star they only have a transit depth of  $\approx 0.5 $(\p)$^2$, half the depth of a uniform brightness transit.
 
 HD209458b's \siIV\ light curve indicates that a Double-U model is an appropriate fit. We find that the equivalent occulting radius is \p=0.34 $\pm$ 0.15, if the absorption is entirely optically thick. This radius favors planetary atmosphere models with high metallicity and for mass flow beyond the planets' Roche lobe.
+
+E. Schlawin was supported by the NASA Space Grant Fellowship. E. Agol was supported in part by the NSF under Grant No.
+PHY05-51164 during a visit to the Kavli Institute for
+Theoretical Physics, and by NSF CAREER Grant No. 0645416.
 \\
 \bibliography{paper}
 %%  \begin{figure}
