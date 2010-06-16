@@ -1,9 +1,9 @@
 %% manuscript produces a one-column, double-spaced document:
-%\documentclass[manuscript]{aastex}
+\documentclass[manuscript]{aastex}
 
 
 
-\documentclass[twocolumn]{emulateapj}
+%\documentclass[twocolumn]{emulateapj}
 \usepackage{amsmath}
 \usepackage{bbding}
 
@@ -69,7 +69,7 @@ Si IV Absorption by HD209458b}
 \affil{Astronomy Department, University of Washington, Seattle, WA 98195}
 \author{L. Walkowicz}
 \affil{Astronomy Department,University of California at Berkeley, `Berkeley, CA 94720}
-\author{K. Covey\altaffilmark{1}}
+\author{K. Covey}
 \affil{Astronomy Department, Cornell University, Ithaca NY 14850}
 \author{J. P. Lloyd}
 \affil{Astronomy Department, Cornell University, Ithaca NY 14850}
@@ -114,10 +114,12 @@ Transit light curves for stellar continua and optically thick emission lines hav
 %%  Otherwise, LaTeX will issue an error. 
 
 \section{Introduction}
-Of the exoplanets so far discovered and published, more than \numt\ are known to
-transit their host star (\texttt{http://exoplanets.org}) . Transits cause observable effects that can constrain exoplanetary composition and size, and accurate timing of transits can reveal when their orbits are perturbed by other bodies \citep{winnchap}. When these transits are observed in the ultraviolet, they show much deeper transits than for visible wavelengths, revealing that escaping atmospheres extend far beyond the optical radius of planets \citep{vidmad,benjaf7,mclay,lecav,fossati}. Ultraviolet measurements also constrain atmospheric conditions and how much mass is escaping the planet's Roche lobe \citep{knutsonprop,gmunoz,linsky}.
+Since the discovery of the first exoplanet to transit its host star \citep{charbd,henryd}, knowledge about exoplanetary radii and atmospheres has exploded. By subtracting starlight during the secondary eclipse, citet(choose a paper) have measured atmospheric emission and citep() have observed the absorption structure of ??. Transit depth measurements indicate planetary radii and calculations of these radii have revealed a suprising number of anomalously large planets. By combining constraints on radii and mass, the composition of these planets can be narrowed down (citep ?). Accurate timing of transits can reveal when their orbits are perturbed by other bodies \citep{winnchap}.
 
-For most transit light curves, the overall brightness of the system is at a minimum when the planet crosses the sub-earth longitude of the star (phase = 0.0). Depending on the extent of stellar limb darkening, the bottom of the light curve can be flat or curved concave up. This occurs with uniform stellar emission across the disk and limb darkening, respectively.
+When these transits are observed in stellar \lya\ and \oi\ emission, they show much deeper transits than for visible wavelengths, revealing that escaping atmospheres extend far beyond the optical radius of planets \citep{vidmad,benjaf7,mclay,lecav,fossati}. These light curve measurements also constrain atmospheric conditions and how much mass is escaping the planet's Roche lobe \citep{knutsonprop,gmunoz,linsky}.
+
+Most transits are observed in stellar continua where the emission is limb darkened. In these wavelengths, the flux from the transiting system is at a minimum when the planet crosses the sub-earth longitude of the star (phase = 0.0) because the stellar disk is brightest at its center. Depending on the extent of stellar limb darkening, the bottom of the light curve can be flat or curved concave up.
+
 % Even more information about their orbit can be gleaned from
 %the exact epoch at which they transit their host star. So called
 %transit timing variation (TTV) measurements
@@ -131,27 +133,24 @@ For most transit light curves, the overall brightness of the system is at a mini
 %sharp negative slope at ingress and a sharp positive slope at
 %regress. In the middle, they have a gradual concave up curvature due to limb darkening of the star.
 
-\citet{assef} point out that observations of emission lines that show strong limb brightening instead have {\it two} minima; some
-wavelengths are limb brightened so the flux at these wavelengths goes
-{\it up} mid-transit and to a minimum at each stellar limb. This occurs for all optically thin
-chromospheric or coronal emission lines because they show strong limb brightening. Just as with a planetary
+By contrast, optically thin
+chromospheric or coronal emission lines show strong limb {\it brightening}. Just as with a planetary
 nebula, like the Ring Nebula, the limb of an optically thin shell of
-gas is brighter at the edges. This is because the column density is much larger at the limb than in the center and because the photospheric emission beneath the chromosphere is negligible.\footnote{Note
-that this effect is different from what causes limb darkening.} As a
-consequence, such a transit curve will be ``W''-shaped, where the maximum
-transit depth occurs at the stellar limbs.
+gas is brighter at the edges --see Figure \ref{limbmodel}. This is because the column density is much larger at the limb than in the center and because the photospheric emission beneath the chromosphere is negligible.\footnote{Note
+that this effect is different from what causes limb darkening.} \citet{assef} showed that observations of these emission lines have two minima; the flux at these wavelengths goes
+{\it up} mid-transit and to a minimum at each stellar limb. As a
+consequence, such a transit curve will be ``W''-shaped.
 
-\citet{assef} point out that limb brightening could be
-useful for detection of transits of planets orbiting giant stars. One advantage
-to photometry in limb brightened wavelengths is that transits are
-deeper overall than for both limb darkened and uniform disk
+Further, \citet{assef} point out that limb brightening could be
+useful for detection of transits of planets orbiting giant stars. Photometry of limb brightened wavelengths have
+deeper minima than for both limb darkened and uniform disk
 emission. This is because the star emits over a smaller effective area--a ring instead of a disk--so the planet covers a larger amount of the
 stellar flux. \citet{assef} approximate the limb brightened
 star as a uniform ring of emission. With their approximation, the maximum depth
 of the transit is  $\propto R_p/R_*$ instead of $(R_p/R_*)^2$,
 as expected for a uniform disk. This is because the planet covers $\sim$2R$_p$ out of a circle of emission whose total circumference is 2$\pi$R. 
 
-We present in this paper a slightly more detailed model of optically thin stellar emission that includes flux from the central region of the stellar disk. Under this model, the maximum transit depth scales as $(R_p/R_*)^{3/2}$, instead of $R_p/R_*$. In
+We present in this paper a more detailed calculation of optically thin stellar emission that includes flux from the central region of the stellar disk. The calculated transit depth scales as $(R_p/R_*)^{3/2}$, instead of $R_p/R_*$. In
 $\mathsection$\ref{labl:chromlcurve} we calculate the expected limb
 brightened light curve for an optically thin emission line. We
 compare this model UV light curve with \siIV\ emission from HD209458b in  $\mathsection$\ref{osiris} and discuss the implications for HD209458b's exosphere in $\mathsection$\ref{discuss}.
@@ -159,9 +158,8 @@ compare this model UV light curve with \siIV\ emission from HD209458b in  $\math
 \section{A Limb Brightened Curve Under The Thin-Shell Approximation} \label{labl:chromlcurve}
 \label{labl:thinshell}
 
-For optically thin emission, the total flux from the chromosphere is proportional to the total number of emitting species. If the emitting species are distributed with a uniform density, then the total flux is proportional to the volume of the chromosphere. We make the approximation that the scale-height of emission, $h$, is much smaller than the size of the planet ($R_p$) and star ($R_*$).
-
-Under this geometrically thin approximation, the total flux from the star is proportional to the surface area of the hemisphere facing the Earth, as pictured in Figure \ref{fig01}, times its thickness $h$. The amount of emission that the planet blocks is then simply the amount of the stellar surface that the planet covers times $h$. In this geometrical limit, therefore, the scale height of the chromosphere cancels out.
+%For optically thin emission, the total flux from the chromosphere is proportional to the total number of emitting species. 
+We make the approximation that the thickness of emission, $h$, is much smaller than the size of the planet ($R_p$) and star ($R_*$). Under this geometrically thin approximation, the total flux from the star is proportional to the surface area of the hemisphere facing the Earth, as pictured in Figure \ref{fig01}, times its thickness $h$. This is because for optically thin emission, the total flux from the chromosphere is proportional to the total number of emitting species. Beneath the chromosphere, we assume that the photospheric emission is negligible. The amount of emission that the planet blocks is then simply the amount of the stellar surface that the planet covers times $h$. In this geometrical limit, therefore, the scale height of the chromosphere cancels out.
 
 %then we can treat the
 %chromosphere as a geometrically thin hemisphere of emission.  This
@@ -193,17 +191,17 @@ the maximum depth of transit is given by
 \begin{equation} \label{depth_anal}
 \delta_{\mathrm{max}} = {A_t \over 2 \pi R_*^2} = \frac{1}{2} \left({R_p \over R_*}\right)^{3/2}
 \end{equation}
-Note that this is a different scaling than that given in \citet{assef} who assume that there is no emission from the central region of the star. The qualitative difference is pictured in Figure \ref{limbmodel}.
+Note that this is a different scaling for maximum transit depth than that given in \citet{assef} who assume that there is no emission from the central region of the star. The qualitative difference is pictured in Figure \ref{limbmodel}.
 
 %Koskinen et a. 2010 treat \oi emission as two separate pieces - limb and disk. Maybe this is OK if OI emission is optically thick
 
 This has the remarkable consequence that the depth of a chromospheric
 transit does not decline as much with the radius of the planet as 
 a transit of a uniform disk.  A chromospheric transit has a maximum
-depth that is $\frac{1}{2} \left({R_* \over R_p}\right)^{1/2}$
+depth that is $\approx \frac{1}{2} \left({R_* \over R_p}\right)^{1/2}$
 times deeper than the maximum transit depth of a uniform disk;
 thus smaller planets have an advantage to be observed at
-chromospheric wavelengths, as emphasized by \citet{assef}. It should also be noted that most limb brightened lines are in the ultraviolet, where planets absorb light from a larger radius than for optical and infrared wavelengths \citep{vidmad}. This means that maximum transit depths of ultraviolet emission lines are enhanced {\it doubly} over optical emission, once for the (\p )$^{1/2}$ scaling and once for the additional atmospheric absorption.
+chromospheric wavelengths, as emphasized by \citet{assef}.
 
 \begin{figure}
 \begin{center}
@@ -214,8 +212,8 @@ chromospheric wavelengths, as emphasized by \citet{assef}. It should also be not
 \end{figure}
 
 
-We can compute the light curve for a negligible scale height ($h=0$) by finding the area of the the planet's shadow and dividing this by the surface area of a hemisphere with radius $R_*$. The volume of the intersection of a cylinder with a sphere is given by \citet{lamarche} and we find the surface area of the intersection by taking a partial derivative with respect to radius. The result can expressed analytically in terms of elliptic integrals.
-Let $x$ be the distance, in units of stellar radii $R_*$, from the center of the planet to the center of the star projected onto a plane perpendicular to the observer. To calculate the light curve for a planet that does not pass through the center of the star, one can simply write $x(t)$ as $\sqrt{t^2+b^2}$, where $t$ is the distance to the closest approach point in stellar radii $R_*$ and $b$ is the impact parameter (the planet-star distance at closest approach) in stellar radii $R_*$. 
+We can compute the light curve for a thickness height ($h=0$) by finding the area of the the planet's shadow and dividing this by the surface area of a hemisphere with radius $R_*$. The volume of the intersection of a cylinder with a sphere is given by \citet{lamarche} and we find the surface area of the intersection by taking a partial derivative with respect to radius. The result can expressed analytically in terms of elliptic integrals.
+Let $x$ be the distance, in units of stellar radii $R_*$, from the center of the planet to the center of the star projected onto a plane perpendicular to the observer. Let $p$ be the planet/star radius ratio, \p. To calculate the light curve for a planet that does not pass through the center of the star, one can simply write $x(t)$ as $\sqrt{t^2+b^2}$, where $t$ is the distance to the closest approach point in stellar radii $R_*$ and $b$ is the impact parameter (the planet-star distance at closest approach) in stellar radii $R_*$. 
 %Let $b$ be the impact parameter of center of the planet relative to
 %the center of the star in units of the radius of the star, as
 %seen by an observer. 
@@ -288,7 +286,7 @@ when modeling data.
 %\subsection{Dependence on planet size}
 
 Figure \ref{fig02} (solid curve) shows the transit light curve (1-$\delta (x)$) for a planet that has \p =0.08 using a thin-shell approximation.  The analytic estimate given by equation \ref{depth_anal} and the more detailed equation \ref{disk} agree well, predicting maximum chromospheric depths to be 1.8 times
-deeper than for uniform disk brightness.\footnote{For a uniform disk emission $\delta_{\mathrm{max}} $=$\pi R_p^2 /(\pi R_*^2)$.} 
+deeper than for uniform disk brightness. (For a uniform disk emission $\delta_{\mathrm{max}} $=$\pi R_p^2 /(\pi R_*^2)$). 
 %Although the smaller
 %planet has a transit depth that is 25\% of the larger planet's
 %transit depth for a star without limb-darkening, the maximum 
@@ -388,6 +386,8 @@ The best-fit transit depth supports models with high concentrations of metallic 
 \citet{linsky} point out that the amount of Si$^{2+}$ may vary appreciably over short timescales because of change in stellar wind speed, planetary mass-loss rate or temperature changes. They observed significant \siIII\ absorption at the same epoch in which they see no \siIV. If \siIV\ is truly not in the absorption spectrum, then there could have been a change in ionization state from Si$^{3+}$ to Si$^{2+}$. The absorption features found at +20 and +40km/s in their spectrum could be some Silicon still in the Si$^{3+}$ ionization state.
 
 Additional observations will help confirm or refute the detection of \siIV\ at the limb of HD209458b and also put further constraints on the system. With enough signal to noise, the light curve may reveal asymmetries in the transit having to do with asymmetric spatial distribution of the UV-absorbing cloud. The advantage of the limb brightened emission lines is that they come from a smaller spatial area of the star and therefore probe the spatial distribution of the planetary atmosphere better than optically thick emission. Accurate time resolved transit data may also reveal differences in {\it thermal} properties of the leading and trailing sides of the planet as predicted by \citet{fortney}.
+
+It should also be noted that most limb brightened lines are in the ultraviolet, where planets absorb light from a larger radius than for optical and infrared wavelengths \citep{vidmad}. This means that maximum transit depths of ultraviolet emission lines are enhanced {\it doubly} over optical emission, once for the (\p )$^{1/2}$ scaling and once for the additional atmospheric absorption.
 
 \section{Conclusion}
 
