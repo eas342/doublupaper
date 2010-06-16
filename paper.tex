@@ -1,10 +1,12 @@
 %% manuscript produces a one-column, double-spaced document:
-\documentclass[manuscript]{aastex}
+%\documentclass[manuscript]{aastex}
 
 
 
-%\documentclass[twocolumn]{emulateapj}
+\documentclass[twocolumn]{emulateapj}
 \usepackage{amsmath}
+\usepackage{bbding}
+
 %% preprint2 produces a double-column, single-spaced document:
 %% Sometimes a paper's abstract is too long to fit on the
 %% title page in preprint2 mode. When that is the case,
@@ -204,13 +206,13 @@ thus smaller planets have an advantage to be observed at
 chromospheric wavelengths, as emphasized by \citet{assef}. It should also be noted that most limb brightened lines are in the ultraviolet, where planets absorb light from a larger radius than for optical and infrared wavelengths \citep{vidmad}. This means that maximum transit depths of ultraviolet emission lines are enhanced {\it doubly} over optical emission, once for the (\p )$^{1/2}$ scaling and once for the additional atmospheric absorption.
 
 \begin{figure}
-%\centerline{\psfig{figure=Chromospheric_shadow.eps,width=4in}}
-%\includegraphics[trim = 1in 6in 2in 0.5in,clip,width=3
-%  in]{Chromospheric_shadow.eps}
-\includegraphics[width=0.5 \textwidth]{chrom_shadow2.eps}
-\caption{Edge-on view of area of stellar emission and the amount blocked by  a planet. This blocked surface area is the same as the area of a shadow cast by a sphere onto a hemisphere.}
-\label{fig01}
+\begin{center}
+\includegraphics[width=0.5\textwidth]{model_comparison.eps}
+\caption{Model Limb Brightening. (a) A model of spherically symmetric optically thin emission includes some emission from the central parts of the star. (b) An approximate model where all the emission is from the stellar limb. We employ the model shown in (a) for \siIV\ emission, and whose light curve is given by  equation \ref{disk}.}
+\label{limbmodel}
+\end{center}
 \end{figure}
+
 
 We can compute the light curve for a negligible scale height ($h=0$) by finding the area of the the planet's shadow and dividing this by the surface area of a hemisphere with radius $R_*$. The volume of the intersection of a cylinder with a sphere is given by \citet{lamarche} and we find the surface area of the intersection by taking a partial derivative with respect to radius. The result can expressed analytically in terms of elliptic integrals.
 Let $x$ be the distance, in units of stellar radii $R_*$, from the center of the planet to the center of the star projected onto a plane perpendicular to the observer. To calculate the light curve for a planet that does not pass through the center of the star, one can simply write $x(t)$ as $\sqrt{t^2+b^2}$, where $t$ is the distance to the closest approach point in stellar radii $R_*$ and $b$ is the impact parameter (the planet-star distance at closest approach) in stellar radii $R_*$. 
@@ -220,9 +222,7 @@ Let $x$ be the distance, in units of stellar radii $R_*$, from the center of the
 %Let $a = A_t/R_*^2$ be the dimensionless transit
 %area, and $f(b,p)=1-\frac{a}{2\pi}$ is the transit light curve.
 
-The transit depth, $\delta (x)$ is split up into three different regimes: $0 < x < 1 -p$, $1 - p < x < 1+p$ and $ 1+p < x$. The transit depth, $\delta (x)$ = 0 when $x > 1 + p$ since no emission is blocked by the planet.
-For $1-p < x < 1+p$, the planet straddles the edge of the star, and
- for $0 < x < 1-p$, the planet is fully contained within the disk of the star. If the planet's radius is larger than the star's -- say, for instance, an M star is host to a giant planet with an inflated atmosphere, the formulae are the same as the straddled. The transit depth is 
+The transit depth, $\delta (x)$ is a piecewise function with three different regimes: (1) when the planet is fully contained in the stellar disk (2) when the planet straddles the edge of the stellar disk and (3) when the planet is beyond the stellar disk. We also include the case that the planet's absorption profile is larger than the star. In this regime, the same equations apply, but in different regimes--see Equation 3.
 % Explicitly,
 %\begin{eqnarray}\label{ellipint}
 %K(m)&=&\int^1_0 {dz \over \sqrt{1-z^2}\sqrt{1-m z^2}}, \cr
@@ -248,7 +248,12 @@ For $1-p < x < 1+p$, the planet straddles the edge of the star, and
 
 
 \begin{align*}
-&&0 < x < 1-p & & |1 - p| < x < 1+p & & 1+p < x ~ or ~ x < p - 1\\
+&& \ooalign{$\bigcirc$\cr\kern+3pt$\bullet$} && \ooalign{$\bigcirc$\cr\kern+6pt$\bullet$}  && \bigcirc ~ \bullet \\
+p < 1&&0 < x < 1-p & & 1 - p < x < 1+p  & & 1+p < x \\
+\hline
+&&  && \ooalign{$\circ$\cr\kern+2pt\CircleSolid}  && \ooalign{\CircleSolid} \\
+p > 1 && && p - 1 < x&& x < p - 1\\
+\hline
 %$0 < x < 1-p $ & $1 - p < x \le 1+p $&$ 1+p < x $ \\
  %$0 < x < 1-p $ & $1 - p < x \le 1+p $&$ 1+p < x $ \\
 a_0 && \sqrt{m} && 1 && 0\\
@@ -260,7 +265,7 @@ a_2 && p^2-x^2 && 1-2p(x+p) && \\
 %m & $4xp\over 1-(x-p)^2$ & $\frac{1-(x-p)^2}{4xp}$$ $& \\
 m && 4xp\over 1-(x-p)^2 && \frac{1-(x-p)^2}{4xp} && \label{defs} \\ 
 %n & $-4xp/(x-p)^2$ & $1-(x-p)^{-2}$ & $$
-n && -4xp/(x-p)^2 && 1-(x-p)^{-2} &&
+n && -4xp/(x-p)^2 && 1-(x-p)^{-2} \tag{3} &&
 \end{align*}
 %\end{tabular}
 
@@ -271,16 +276,14 @@ n && -4xp/(x-p)^2 && 1-(x-p)^{-2} &&
 %\end{center}
 where $K(m)$, $E(m)$, and $\Pi(n,m)$ are complete Legendre elliptic 
 integrals of the first, second, and third kinds, and $\Theta(x)$ is
-the Heaviside step function. For the elliptic integrals, we use the conventions of \citet{handbk} where $\Pi(n,m) = \Pi(n;K(m)|m)$ for the third elliptic integral.
-
-
+the Heaviside step function. For the elliptic integrals, we use the conventions of \citet{handbk} where $\Pi(n,m) = \Pi(n;K(m)|m)$ for the third elliptic integral. An IDL procedure for the transit depth $\delta (x)$ is located at \texttt{http://www.astro.washington.edu/agol/}.
 
 These formulae are difficult to evaluate numerically at 
 $x=p$ and $x=1-p$ due to the divergence of $K(1)$ and $\Pi(n,1)$
 ; the divergences cancel out analytically, but routines that
 evaluate the elliptic integrals diverge.  However, these locations
 are a set of measure zero, and thus should almost never be encountered
-when modeling data.
+when modeling data. 
 
 %\subsection{Dependence on planet size}
 
@@ -312,21 +315,21 @@ deeper than for uniform disk brightness.\footnote{For a uniform disk emission $\
 %the physical extent of the chromosphere.
 
 \begin{figure}
+%\centerline{\psfig{figure=Chromospheric_shadow.eps,width=4in}}
+%\includegraphics[trim = 1in 6in 2in 0.5in,clip,width=3
+%  in]{Chromospheric_shadow.eps}
+\includegraphics[width=0.5 \textwidth]{chrom_shadow2.eps}
+\caption{Edge-on view of area of stellar emission and the amount blocked by  a planet. This blocked surface area is the same as the area of a shadow cast by a sphere onto a hemisphere.}
+\label{fig01}
+\end{figure}
+
+\begin{figure}
 %\centerline{\psfig{figure=comp_size.eps,width=4in}}                            
 %\includegraphics[trim = 1in 6in 2in 0.5in,clip,width=3                         
 %  in]{comp_size.eps}                                                           
 \includegraphics[width=0.5 \textwidth]{model_compare2.eps}
 \caption{Transit light curve for \p $=0.08$, using a family of 3 different models. The solid line is a Double-U model, using equation \ref{disk}. The Uniform model (dashed line) is one for which the emission is assumed to be constant across the stellar disk. The dot-dash line is a model where the emission is assumed to be only from the limb as pictured in Figure \ref{limbmodel}. Note that the Double-U models' minima are deeper than the uniform emission model and that these minima occur at the stellar limbs. }
 \label{fig02}
-\end{figure}
-
-
-\begin{figure}
-\begin{center}
-\includegraphics[width=0.5\textwidth]{model_comparison.eps}
-\caption{Model Limb Brightening. (a) A model of spherically symmetric optically thin emission includes some emission from the central parts of the star. (b) An approximate model where all the emission is from the stellar limb. We employ the model shown in (a) for \siIV\ emission, and whose light curve is given by  equation \ref{disk}.}
-\label{limbmodel}
-\end{center}
 \end{figure}
 
 \begin{figure}
